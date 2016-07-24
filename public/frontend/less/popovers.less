@@ -1,0 +1,24 @@
+//
+// Popovers
+// dependency: bootstrap/popovers.less
+// --------------------------------------------------
+
+.popover {
+	font-size: @popover-body-font-size;
+	color: @popover-body-font-color;
+  border: none;
+  border-radius: @popover-border-radius;
+  .box-shadow(none);
+  &.bottom > .arrow:after { border-bottom-color: @popover-title-bg; }
+}
+.popover-title {
+	font-size: @popover-title-font-size;
+	color: @popover-title-font-color;
+	font-weight: normal;
+	padding: 12px 15px;
+	border: none;
+}
+.popover-content {
+  padding: 12px 15px 16px 12px;
+  p { margin-bottom: 0; }
+}

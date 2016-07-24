@@ -1,0 +1,140 @@
+//
+// Tables
+// dependency: bootstrap/tables.less
+// --------------------------------------------------
+
+.table {
+	border-bottom: 1px solid @table-border-color;
+
+  // Caption
+  > caption {
+  	color: @table-caption-color;
+  	margin-bottom: (@line-height-computed / 2);
+  }
+
+  // Headings
+  > thead > tr > th,
+  > tbody > tr > th {
+  	color: @table-th-color;
+  	font-weight: normal;
+  }
+  > thead > tr > th {
+    border-bottom: 1px solid @table-border-color;
+  }
+
+  //Buttons
+  .btn {
+  	margin-top: 0;
+  	margin-bottom: 0;
+  }
+}
+
+// Remove border from Responsive table
+.table-responsive {
+	@media screen and (max-width: @screen-xs-max) {
+		border: 0;
+	}
+}
+
+// Hover effect
+.table-hover {
+  > tbody > tr { .transition(background-color, .25s); }
+}
+
+// Contextual colors
+.table tr {
+	&.success, 
+	&.info,
+	&.warning,
+	&.danger {
+		color: #fff;
+		th { color: #fff; }
+		td, th { border: 0; }
+		& + tr {
+			td, th { border: 0; }
+		}
+	}
+}
+
+// Bordered Table
+.table-bordered {
+	overflow: hidden;
+	background-color: @body-bg;
+	border-radius: @border-radius-small !important;
+}
+
+// When Body Alt
+.body-alt .table-bordered { background-color: @body-bg-alt; }
+
+
+// Special Shop tables
+// --------------------------------------------------
+// Order table (in sidebar)
+.order-table {
+  padding: 0 22px;
+  table {
+    width: 100%;
+
+    th {
+      font-size: ceil((@font-size-base * 1.25)); // ~18px
+      text-align: left;
+      padding: 12px 0;
+      font-weight: normal;
+      &:last-child {
+        text-align: right;
+        padding-left: 15px;
+      }
+    }
+    td {
+      font-size: @font-size-base; // 14px
+      padding: 3px 0;
+      &:last-child {
+        text-align: right;
+        font-size: ceil((@font-size-base * 1.7)); // ~24px
+        padding-left: 15px;
+      }
+    }
+  }
+  hr { margin: ceil(@line-height-computed / 1.7) 0; }
+}
+
+// Shopping Cart table
+.shop-cart-table {
+  min-width: 520px;
+  border-bottom: none;
+  > thead > tr > th {
+    border-bottom-color: transparent;
+    &:first-child { padding-left: 0; }
+  }
+  > tbody > tr > td {
+    border-top-color: transparent;
+    vertical-align: middle;
+    padding-left: 15px;
+    &:first-child { padding-left: 0; }
+  }
+  .widget.widget-shopping-cart {
+    margin-bottom: 0;
+    .w-item { margin-bottom: 0; }
+    .w-item-thumb,
+    .w-item-content { vertical-align: middle; }
+    .w-item-thumb a { width: 80px; }
+  }
+  .shop-price {
+    font-size: floor((@font-size-base * 1.15)); // ~16px
+    font-weight: 600;
+    margin: 0;
+  }
+  .count-input { max-width: 105px; }
+  .delete {
+    font-size: 20px;
+    line-height: 2;
+    color: @brand-danger;
+    font-weight: 300;
+    cursor: pointer;
+    opacity: 1;
+    .transition(opacity, 0.25s);
+    &:hover {
+      opacity: .6;
+    }
+  }
+}

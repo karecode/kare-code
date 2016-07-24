@@ -1,0 +1,242 @@
+//
+// Ratings
+// --------------------------------------------------
+
+// Product Rating
+.rating {
+  span {
+    float: left;
+    font-size: 14px;
+    margin-right: 1px;
+    color: @rating-color-inactive;
+    &:last-child { margin-right: 0; }
+    &.star {
+      color: @rating-color-inactive;
+      margin-top: -2px;
+      &:before {
+        font-family: 'Pe-icon-7-stroke'; 
+        content: "\e611";
+        font-size: @rating-sm-size;
+      }
+      &.active { color: @rating-color-default; }
+    }
+  }
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after { clear: both; }
+
+  // Color variations
+  &.rating-default span.star.active {
+    color: @rating-color-default;
+  }
+  &.rating-primary span.star.active {
+    color: @rating-color-primary;
+  }
+  &.rating-success span.star.active {
+    color: @rating-color-success;
+  }
+  &.rating-info span.star.active {
+    color: @rating-color-info;
+  }
+  &.rating-warning span.star.active {
+    color: @rating-color-warning;
+  }
+  &.rating-danger span.star.active {
+    color: @rating-color-danger;
+  }
+  &.rating-danger span.star.active {
+    color: @rating-color-danger;
+  }
+
+  // Double size
+  &.rating-lg {
+    span {
+      font-size: 16px;
+      &.star {
+        margin-top: -5px;
+        &:before {
+          font-size: @rating-md-size;
+        }
+      }
+    }
+  }
+
+  // Inline version
+  &.rating-inline {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 18px;
+  }
+}
+
+// Light Skin
+.text-light {
+  .rating,
+  &.rating {
+    span,
+    span.star {
+      color: rgba(255,255,255,0.6);
+      &.active { color: #fff; }
+    }
+  }
+}
+.text-center {
+  .rating,
+  &.rating {
+    display: table;
+    margin: auto;
+  }
+}
+
+
+/*!
+ * @copyright &copy; Kartik Visweswaran, Krajee.com, 2013 - 2015
+ * @version 3.5.1
+ *
+ * A simple yet powerful JQuery star rating plugin that allows rendering
+ * fractional star ratings and supports Right to Left (RTL) input.
+ *
+ * For more JQuery/Bootstrap plugins and demos visit http://plugins.krajee.com
+ * For more Yii related demos visit http://demos.krajee.com
+ */
+ 
+.rating-loading {
+    width: 25px;
+    height: 25px;
+    font-size: 0px;
+    color: #fff;
+    background: transparent url('../img/loading.gif') top left no-repeat;
+    border: none;
+}
+
+/*
+ * Stars
+ */
+.rating-fa {
+  font-family: 'FontAwesome';
+  padding-left: 1px;
+
+  .rating-stars:before { padding-left: 1px; }
+}
+.rating-gly {
+  font-family: 'Pe-icon-7-stroke'; 
+}
+.rating-gly-star {
+  font-family: 'Pe-icon-7-stroke'; 
+  padding-left: 1px;
+}
+.rating-active { cursor: pointer; }
+.rating-disabled { cursor: not-allowed; }
+.rating-uni {
+  font-size: 1.2em;
+  margin-top: -5px;
+}
+.rating-container {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  color: @rating-color-inactive;
+  overflow: hidden;
+
+  &:before {
+    content: attr(data-content);
+  }
+
+  .rating-stars {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: @rating-color-default;
+    .transition(all, .25s);
+    &:before { content: attr(data-content); }
+  }
+}
+
+.rating-container-rtl {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden;
+  color: @rating-color-inactive;
+
+  &:before { content: attr(data-content); }
+
+  .rating-stars {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: @rating-color-default;
+    .transition(all, .25s);
+    &:before { content: attr(data-content); }
+  }
+}
+
+/**
+ * Rating sizes
+ */
+.rating-lg,
+.rating-xl { font-size: @rating-lg-size; }
+.rating-md { font-size: @rating-md-size; }
+.rating-sm,
+.rating-xs { font-size: @rating-sm-size; }
+
+/**
+ * Caption
+ */
+.star-rating .caption,
+.star-rating-rtl .caption {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: @font-size-small;
+  padding-top: 4px;
+}
+.star-rating .caption { padding-left: 5px; }
+.star-rating-rtl .caption { padding-right: 5px; }
+
+.rating-lg {
+  &.star-rating .caption,
+  &.star-rating-rtl .caption {
+    font-size: @font-size-base;
+  }
+}
+
+/**
+ * Color variations
+ */
+.rating-input-primary {
+  .rating-container .rating-stars,
+  .rating-container-rtl .rating-stars {
+    color: @rating-color-primary;
+  }
+}
+.rating-input-success {
+  .rating-container .rating-stars,
+  .rating-container-rtl .rating-stars {
+    color: @rating-color-success;
+  }
+}
+.rating-input-info {
+  .rating-container .rating-stars,
+  .rating-container-rtl .rating-stars {
+    color: @rating-color-info;
+  }
+}
+.rating-input-warning {
+  .rating-container .rating-stars,
+  .rating-container-rtl .rating-stars {
+    color: @rating-color-warning;
+  }
+}
+.rating-input-danger {
+  .rating-container .rating-stars,
+  .rating-container-rtl .rating-stars {
+    color: @rating-color-danger;
+  }
+}

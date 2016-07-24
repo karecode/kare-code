@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.layouts.app');
+});
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+Route::group(['prefix' => 'admin','middleware'=>['web','auth']], function () {
+    Route::get('dashboard', 'Backend\AdminController@index');
+    Route::get('blog-ekle', 'Backend\BlogController@get_blogEkle');
+    Route::post('blog/resim-upload','Backend\BlogController@resimYukle');
+    Route::post('/upload_image',['as'=>'ckeditor.upload','uses'=>'Backend\BlogController@ckeupload']);
 });

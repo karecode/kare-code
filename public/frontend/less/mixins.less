@@ -1,0 +1,63 @@
+//
+// Mixins
+// --------------------------------------------------
+
+// Transition shorthand
+.transition(@property, @time) {
+  -webkit-transition: @property @time;
+				  transition: @property @time;
+}
+
+// Rewrite hover state color to be 10% lighter
+.button-variant(@color; @background; @border) {
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-color: lighten(@background, 10%);
+        border-color: lighten(@border, 12%);
+  }
+}
+
+// RGBA color
+.rgbaColor(@color, @opacity : 1) {
+  color: rgba( red(@color), green(@color), blue(@color), @opacity );
+}
+
+// RGBA background color
+.rgbaBackground(@color, @opacity : 1) {
+  background-color: rgba( red(@color), green(@color), blue(@color), @opacity );
+}
+
+// HEX to RGBA mixin
+.rgba(@color, @opacity : 1) {
+  @result: rgba( red(@color), green(@color), blue(@color), @opacity );
+}
+
+// Special RGBA for Gradient mixin
+.rgbaGradient(@color1, @color2, @opacity : 1){
+  @result1: rgba( red(@color1), green(@color1), blue(@color1), @opacity );
+  @result2: rgba( red(@color2), green(@color2), blue(@color2), @opacity );
+}
+
+// Gradients
+.gradient-vertical (@startColor, @endColor) {
+  background: @endColor;
+  background: -moz-linear-gradient(top, @startColor 0%, @endColor 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor));
+  background: -webkit-linear-gradient(top, @startColor 0%, @endColor 100%);
+  background: -o-linear-gradient(top, @startColor 0%, @endColor 100%);
+  background: -ms-linear-gradient(top, @startColor 0%, @endColor 100%);
+  background: linear-gradient(to bottom, @startColor 0%, @endColor 100%);
+}
+.gradient-horizontal (@startColor, @endColor) {
+  background: @startColor;
+  background: -moz-linear-gradient(left, @startColor 0%, @endColor 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, @startColor), color-stop(100%, @endColor));
+  background: -webkit-linear-gradient(left, @startColor 0%, @endColor 100%);
+  background: -o-linear-gradient(left, @startColor 0%, @endColor 100%);
+  background: -ms-linear-gradient(left, @startColor 0%, @endColor 100%);
+  background: linear-gradient(to right, @startColor 0%, @endColor 100%);
+}

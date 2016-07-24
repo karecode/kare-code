@@ -1,0 +1,317 @@
+//
+// Navs (Tabs, Filters)
+// dependency: bootstrap/navs.less
+// --------------------------------------------------
+
+.nav-tabs,
+.nav-filters {
+  padding: 0;
+  margin: 0; 
+
+  & > li {
+    float: none;
+    display: inline-block;
+    margin-right: 18px;
+
+    & > a {
+      font-size: @nav-tabs-font-size;
+      color: @nav-tabs-color;
+      text-transform: uppercase;
+      border-radius: 0;
+      padding: 5px 0;
+      opacity: .5;
+
+      &:after {
+        display: block;
+        content: "";
+        width: 0px;
+        height: 2px;
+        background-color: @nav-tabs-color-active;
+        margin-top: 3px;
+        opacity: 0;
+        .transition(all, .3s);
+      }
+    }
+  }
+  &.text-right > li {
+    margin-right: 0;
+    margin-left: 18px;
+  }
+  &.text-center > li {
+    margin-right: 9px;
+    margin-left: 9px;
+  }
+  &.text-light {
+    & > li > a {
+      color: #fff;
+      &:after { background-color: #fff; }
+    }
+  }
+}
+.text-light {
+  .nav-tabs,
+  .nav-filters {
+    & > li > a {
+      color: #fff;
+      &:after { background-color: #fff; }
+    }
+  }
+}
+.text-right .nav-tabs > li,
+.text-right .nav-filters > li {
+  margin-right: 0;
+  margin-left: 18px;
+}
+.text-center .nav-tabs > li,
+.text-center .nav-filters > li {
+  margin-right: 9px;
+  margin-left: 9px;
+}
+.nav-tabs,
+.nav-filters {
+  border: none;
+  & > li > a,
+  & > li > a:hover,
+  & > li > a:focus,
+  & > li.active > a,
+  & > li.active > a:hover,
+  & > li.active > a:focus {
+    border: none;
+    background: none;
+  }
+  & > li > a:hover,
+  & > li > a:focus,
+  & > li.active > a,
+  & > li.active > a:hover,
+  & > li.active > a:focus {
+    opacity: 1;
+    color: @nav-tabs-color-active;
+  }
+  &.text-light {
+    & > li > a:hover,
+    & > li > a:focus,
+    & > li.active > a,
+    & > li.active > a:hover,
+    & > li.active > a:focus { color: #fff; }
+  }
+}
+.text-light {
+  .nav-tabs,
+  .nav-filters {
+    & > li > a:hover,
+    & > li > a:focus,
+    & > li.active > a,
+    & > li.active > a:hover,
+    & > li.active > a:focus { color: #fff; }
+  }
+}
+.nav-tabs > li.active > a:after,
+.nav-filters > li.active > a:after {
+  width: 100%;
+  opacity: 1;
+}
+
+// Vertical version
+.nav-tabs.nav-vertical,
+.nav-filters.nav-vertical {
+  & > li {
+    display: block;
+    margin: 6px 0;
+    &:first-child { margin-top: 0; }
+
+    & > a { display: inline-block; }
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav-tabs.nav-vertical,
+  .nav-filters.nav-vertical {
+    padding-bottom: 18px;
+    & > li {
+      display: inline-block;
+      margin: 0 18px 0 0;
+
+      & > a { display: block; }
+    }
+  }
+  .nav-tabs.text-right > li,
+  .nav-filters.text-right > li {
+    margin-right: 0;
+    margin-left: 18px;
+  }
+}
+.tab-pane {
+  padding-top: 4px;
+
+  img {
+    display: block;
+    margin: auto;
+  }
+}
+.nav-filters > li {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+// Alternative Version
+.nav-tabs-alt,
+.nav-filters-alt {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  margin-bottom: @line-height-computed;
+
+  & > li {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 !important;
+
+    & > a {
+      display: block;
+      text-transform: none;
+      opacity: 1;
+      margin: 0;
+      margin-left: -1px;
+      padding: 7px 10px;
+      color: @nav-tabs-alt-color;
+      border: 1px solid @nav-tabs-alt-color;
+      .transition(all, .3s);
+      &:after { display: none; } 
+    }
+    & > a:hover,
+    & > a:focus,
+    &.active > a,
+    &.active > a:hover,
+    &.active > a:focus {
+      border: 1px solid @nav-tabs-alt-color;
+    }
+    &.active > a,
+    &.active > a:hover,
+    &.active > a:focus {
+      .rgba(@nav-tabs-alt-color-active, .6);
+      color: @result;
+      background-color: @nav-tabs-alt-color;
+    }
+    &:first-child a {
+      border-radius: @nav-tabs-alt-border-radius 0 0 @nav-tabs-alt-border-radius;
+    }
+    &:last-child a {
+      border-radius: 0 @nav-tabs-alt-border-radius @nav-tabs-alt-border-radius 0;
+    }
+  }
+
+  &.text-light {
+    & > li {
+      & > a,
+      & > a:hover,
+      & > a:focus,
+      &.active > a,
+      &.active > a:hover,
+      &.active > a:focus {
+        padding: 8px 10px;
+        border: none;
+        background-color: @nav-tabs-alt-light-bg;
+      }
+      &.active > a,
+      &.active > a:hover,
+      &.active > a:focus {
+        color: @text-color;
+        background-color: @nav-tabs-alt-light-active-bg;
+      }
+    }
+  }
+}
+.text-light {
+  .nav-tabs-alt > li,
+  .nav-filters-alt > li {
+    & > a,
+    & > a:hover,
+    & > a:focus,
+    &.active > a,
+    &.active > a:hover,
+    &.active > a:focus {
+      padding: 8px 10px;
+      border: none;
+      background-color: @nav-tabs-alt-light-bg;
+    }
+    &.active > a,
+    &.active > a:hover,
+    &.active > a:focus {
+      color: @text-color;
+      background-color: @nav-tabs-alt-light-active-bg;
+    }
+  }
+}
+
+// Center Filters at @tablet-land viewport width
+@media @tablet-land {
+  .nav-filters {
+    text-align: center;
+    & > li {
+      margin-left: 9px;
+      margin-right: 9px;
+    }
+  }
+}
+
+// Transition Effects
+.transition {
+  &.fade {
+    -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+  }
+  &.scale.fade {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  &.scaleup.fade {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  &.scale.fade.in,
+  &.scaleup.fade.in {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  &.left.fade {
+    -webkit-transform: translateX(40px);
+            transform: translateX(40px);
+  }
+  &.right.fade {
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+  }
+  &.left.fade.in,
+  &.right.fade.in {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  &.top.fade {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  &.bottom.fade {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  &.top.fade.in,
+  &.bottom.fade.in {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  &.flip.fade {
+    -webkit-transform: rotateY(-90deg) scale(1.1);
+            transform: rotateY(-90deg) scale(1.1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  &.flip.fade.in {
+    -webkit-transform: rotateY(0deg) scale(1);
+            transform: rotateY(0deg) scale(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+}

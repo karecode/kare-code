@@ -1,0 +1,396 @@
+//
+// Grids
+// Masonry, no gap, etc.
+// --------------------------------------------------
+
+// Base Class
+.grid {
+	position: relative;
+
+	// No Gap Grids
+	&.grid-no-gap {
+		width: 100%;
+	  &:before,
+	  &:after {
+	    content: " ";
+	    display: table;
+	  }
+	  &:after { clear: both; }
+		.grid-item { float: left; }
+
+		// Columns
+		&.cols-5 {
+			.grid-item { width: 20%; }
+		}
+		&.cols-4 {
+			.grid-item { width: 25%; }
+		}
+		&.cols-3 {
+			.grid-item { width: (100% / 3); }
+		}
+		&.cols-2 {
+			.grid-item { width: 50%; }
+		}
+		&.cols-1 {
+			.grid-item { width: 100%; }
+		}
+		@media @desktop {
+			&.cols-5 {
+				.grid-item { width: 25%; }
+			}
+			&.cols-4 {
+				.grid-item { width: (100% / 3); }
+			}
+		}
+		@media @tablet-land {
+			&.cols-5 {
+				.grid-item { width: (100% / 3); }
+			}
+			&.cols-3 {
+				.grid-item { width: 50%; }
+			}
+		}
+		@media @tablet-port {
+			&.cols-5,
+			&.cols-4 {
+				.grid-item { width: 50%; }
+			}
+		}
+		@media @mobile-land {
+			&.cols-5,
+			&.cols-4,
+			&.cols-3,
+			&.cols-2 {
+				.grid-item { width: 100%; }
+			}
+		}
+
+		// Bordered version only for 5 cols layout
+		// (Used with logos, clients)
+		&.grid-bordered {
+			.grid-item {
+				border-right: 1px solid @grid-border-color;
+				border-top: 1px solid @grid-border-color;
+				padding: @line-height-computed 15px;
+			}
+
+			&.cols-5 .grid-item {
+				&:nth-child(5n) { border-right: none; }
+				&:nth-child(1), &:nth-child(2), &:nth-child(3),
+				&:nth-child(4), &:nth-child(5) { border-top: none; }
+				@media @desktop { width: 20%; }
+				@media @tablet-land { width: 20%; }
+				@media @tablet-port {
+					width: 50%;
+					border-right: none;
+					&:nth-child(3),
+					&:nth-child(4),
+					&:nth-child(5) { border-top: 1px solid @grid-border-color; }
+					&:nth-child(odd) {
+						border-right: 1px solid @grid-border-color;
+					}
+				}
+
+				// Clients specific
+				.client-box .thumb {
+					max-width: ceil(@client-content-box-thumb-max-width / 1.2);
+					opacity: .65;
+					.backface-visibility(hidden);
+					&:hover { opacity: 1; }
+				} 
+			}
+		}
+
+		// Equal height grid
+		// Applicable only for .cols-2, .cols-3 and .cols-4
+		&.equal-height {
+			display: table;
+			.grid-item {
+				display: table-cell;
+				float: none;
+				vertical-align: top;
+			}
+			@media @desktop {
+				&.cols-4 .grid-item { width: 25%; } 
+			}
+			@media @tablet-land {
+				&.cols-4 .grid-item { width: 25%; }
+				&.cols-3 .grid-item { width: (100% / 3); }
+				&.cols-2 .grid-item { width: 50%; }
+			}
+			@media @tablet-port {
+				&.cols-4,
+				&.cols-3,
+				&.cols-2 {
+					.grid-item {
+						display: block;
+						width: 100%;
+					} 
+				}
+			}
+		}
+	}
+
+	// Tile modification for using inside grid
+	.tile {
+		max-width: 100%;
+		margin-bottom: 0;
+	}
+
+	// Isotope Grid Equal Columns
+	//---------------------------------------
+	&.isotope-grid {
+		overflow: hidden;
+		&:after {
+		  content: '';
+		  display: block;
+		  clear: both;
+		}
+
+		// Gap width
+		.gutter-sizer {
+			width: 2.5%;
+			@media @tablet-port { width: 3.5%; }
+		}
+		
+		// Items
+		.grid-item {
+			float: left;
+			margin-bottom: 2.8%;
+			@media @tablet-port { margin-bottom: 3.5%; }
+			@media screen and (max-width: 500px) {
+				margin-bottom: 5%;
+			}
+		}
+
+		// 1 Column
+		&.cols-1 {
+			.gutter-sizer { width: 0px; }
+			.grid-sizer,
+			.grid-item {
+				float: none;
+				width: 100%;
+				margin-bottom: 35px;
+			}
+		}
+		@media screen and (max-width: 700px) {
+			.tile-horizontal {
+				max-width: @tile-max-width;
+			}
+		}
+
+		// 2 Columns
+		&.cols-2 {
+			.grid-sizer,
+			.grid-item {
+				width: 48.75%;
+				@media @tablet-port { width: 48.25%; }
+				@media screen and (max-width: 600px) {
+					float: none;
+					width: 100%;
+				}
+			}
+		}
+
+		// 3 Columns
+		&.cols-3 {
+			.grid-sizer,
+			.grid-item {
+				width: ( 100% - 5% ) / 3; // where 5% is double gutter width
+				@media @tablet-land { width: 48.75%; }
+				@media @tablet-port { width: 48.25%; }
+				@media screen and (max-width: 520px) {
+					float: none;
+					width: 100%;
+				}
+			}
+		}
+		&.cols-4 {
+			.grid-sizer,
+			.grid-item {
+				width: ( 100% - 7.5% ) / 4; // where 7.5% is tripple gutter width
+				@media @tablet-land { width: 48.75%; }
+				@media @tablet-port { width: 48.25%; }
+				@media screen and (max-width: 520px) {
+					float: none;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	// Masonry Type 1 (Isotope)
+	//-----------------------------------------
+	&.masonry-grid-type-1 {
+		overflow: hidden;
+		&:after {
+		  content: '';
+		  display: block;
+		  clear: both;
+		}
+
+		// Gap width
+		.gutter-sizer { width: 2.5%; }
+
+		// Default item
+		.grid-sizer,
+		.grid-item { width: 31.6%; }
+		.grid-item {
+			float: left;
+			margin-bottom: 2.8%;
+
+			// Wide item
+			&.w2 { width: 65.3%; }
+		}
+
+		@media @tablet-port {
+			.grid-sizer,
+			.grid-item {
+				width: 48.5%;
+				margin-bottom: 3%;
+			}
+			.grid-item.w2 { width: 100%; }
+			.gutter-sizer { width: 3%; }
+		}
+
+		@media screen and (max-width: 500px) {
+			.grid-sizer,
+			.grid-item,
+			.grid-item.w2 {
+				width: 100%;
+				margin-bottom: 5%;
+			}
+			.gutter-sizer { width: 0px; }
+		}
+	}
+
+	// Masonry Type 2 (Isotope)
+	&.masonry-grid-type-2 {
+		overflow: hidden;
+		&:after {
+		  content: '';
+		  display: block;
+		  clear: both;
+		}
+
+		// Gap width
+		.gutter-sizer { width: 2.5%; }
+
+		// Default item
+		.grid-sizer,
+		.grid-item { width: 23.125%; }
+		.grid-item {
+			float: left;
+			overflow: hidden;
+			height: 268px;
+			margin-bottom: 30px;
+
+			// Double width
+			&.w2 { width: 48.75%; }
+
+			//Double height
+			&.h2 {
+				font-size: inherit;
+				font-weight: normal;
+				margin-left: 0;
+				height: 566px;
+			}
+		}
+		
+		@media @desktop {
+			.grid-item { margin-bottom: 25px; }
+		}
+
+		@media @tablet-land {
+			.grid-item {
+				height: 180px;
+				margin-bottom: 18px;
+				&.h2 { height: 378px; }				
+			}
+		}
+
+		@media @tablet-port {
+			.grid-sizer,
+			.grid-item {
+				width: 48.5%;
+				height: 220px;
+				margin-bottom: 3%;
+				&.h2 { height: 400px; }
+			}
+			.grid-item.w2 { width: 100%; }
+			.gutter-sizer { width: 3%; }
+		}
+
+		@media screen and (max-width: 500px) {
+			.grid-sizer,
+			.grid-item,
+			.grid-item.w2 {
+				width: 100%;
+				margin-bottom: 5%;
+			}
+			.grid-item.h2 { height: 350px; }
+			.gutter-sizer { width: 0px; }
+		}
+	}
+}
+
+// Isotope No Gap Grid System
+.grid.isotope-grid.isotope-nogap {
+	.gutter-sizer { width: 0px; }
+	
+	// Items
+	.grid-item {
+		position: relative;
+		height: 500px;
+		margin-bottom: 0px;
+		@media @desktop { height: 400px; }
+		@media @tablet-port { height: 280px; }
+	}
+	.grid-sizer,
+	.grid-item { width: 25%; }
+
+	// Grid variations
+	// 1 Column
+	.col-1 { 
+		width: 100%;
+	}
+
+	// 2 Columns
+	.col-2 {
+		width: 50%;
+		@media screen and (max-width: 600px) {
+			width: 100%;
+		}
+	}
+
+	// 3 Columns
+	.col-3 {
+		width: (100% / 3);
+		height: 450px;
+		@media @desktop { height: 380px; }
+		@media @tablet-land { width: 50%; }
+		@media @tablet-port { height: 280px; }
+		@media screen and (max-width: 500px) {
+			width: 100%;
+		}
+	}
+
+	// 4 Columns
+	.col-4 {
+		width: 25%;
+		height: 400px;
+		@media @desktop { height: 320px; }
+		@media @tablet-land { width:50%; }
+		@media @tablet-port { height: 280px; }
+		@media screen and (max-width: 500px) {
+			width: 100%;
+		}
+	}
+}
+
+// Boxed variant (inside container)
+.container {
+	.grid.isotope-grid.isotope-nogap {
+		.grid-item { height: auto; }
+	}
+}

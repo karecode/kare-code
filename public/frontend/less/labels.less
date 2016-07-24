@@ -1,0 +1,32 @@
+//
+// Labels
+// --------------------------------------------------
+
+.label {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+  color: @label-color;
+  text-align: left;
+  white-space: nowrap;
+  border-radius: 0;
+  background: none;
+
+  // Empty labels collapse automatically
+  &:empty {
+    display: none;
+  }
+
+  // Labels alignment
+  &.align-left { margin-right: 12px; }
+  &.align-right { margin-left: 12px; }
+
+  // Color variations
+  &.label-primary { color: @label-primary-color; }
+	&.label-success { color: @label-success-color; }
+	&.label-info { color: @label-info-color; }
+	&.label-warning { color: @label-warning-color; }
+	&.label-danger { color: @label-danger-color; }
+}

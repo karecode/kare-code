@@ -1,0 +1,44 @@
+//
+// Pagination
+// --------------------------------------------------
+
+.pagination {
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  .prev, .next {
+    display: block;
+    position: absolute;
+    top: 0;
+    i {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 17px;
+      margin-top: -2px;
+    }
+  }
+  .prev {
+    left: 0;
+    i { margin-right: 4px; }
+  }
+  .next {
+    right: 0;
+    i { margin-left: 4px; }
+  }
+  
+  .page-numbers {
+    display: inline-block;
+    margin: 0 8px;
+    &.current { color: @text-muted; }
+  }
+  @media screen and (max-width: 570px) {
+    margin-bottom: 70px;
+    .prev, .next {
+      display: block;
+      position: absolute;
+      top: 100%;
+      margin-top: 20px;
+    }
+  }
+}

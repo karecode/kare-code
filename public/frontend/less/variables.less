@@ -1,0 +1,810 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== Colors
+//## Gray and brand colors for use across iTheme.
+
+@gray-darker:            #3a3a3a;
+@gray-dark:              #4d4d4d;
+@gray:                   #8e8e93;
+@gray-light:             #ccc;
+@gray-lighter:           #f2f2f2;
+
+@brand-default: 				@gray-darker;
+@brand-primary:         #007aff;
+@brand-success:         #4cd964;
+@brand-info:            #5ac8fa;
+@brand-warning:         #ffcc00;
+@brand-warning-2:       #ff9500;
+@brand-danger:          #ff2d55;
+
+
+//== Scaffolding
+
+//** Background color for `<body>`.
+@body-bg:               #f5f5f5;
+//** Alternative background color for `<body>`.
+@body-bg-alt:           #fff;
+//** Global text color on `<body>`.
+@text-color:            @gray-darker;
+
+//** Global textual link color.
+@link-color:            @brand-primary;
+//** Link hover color set.
+@link-hover-color:      @link-color;
+
+//** Disabled state color / background-color.
+@disabled-color: 				@gray-light;
+@disabled-bg: 					@gray-light;
+
+
+//== Typography
+//## Font, line-height, and color for body text, headings, and more.
+
+@font-family-base:        'Open Sans', Helvetica, Arial, sans-serif;
+@font-family-alt-1:       'Roboto', Helvetica, Arial, sans-serif;
+@font-family-alt-2:       'Merriweather', Helvetica, Arial, sans-serif;
+@font-family-alt-3:       'PT Sans', Helvetica, Arial, sans-serif;
+@font-family-alt-4:       'Bitter', Helvetica, Arial, sans-serif;
+@font-family-alt-5:       'Quando', Helvetica, Arial, sans-serif;
+@font-family-alt-6:       'Sansita One', Helvetica, Arial, sans-serif;
+@font-family-alt-7:       'Nunito', Helvetica, Arial, sans-serif;
+
+
+@font-size-base:          14px;
+@font-size-lead: 					floor((@font-size-base * 1.6)); // ~22px
+@font-size-large:         floor((@font-size-base * 1.15)); // ~16px
+@font-size-small: 				ceil((@font-size-base * 0.9)); // ~13px
+@font-size-xs:         		ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:            floor((@font-size-base * 3.45)); // ~48px
+@font-size-h2:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:            @font-size-large;
+@font-size-h6:            @font-size-base;
+
+@line-height-base:        1.5;
+//** Computed "line-height" for use with `margin`, `padding`, etc.
+@line-height-computed:    ceil((@font-size-base * @line-height-base) + 3); // ~24px
+
+// Headings
+@headings-line-height: 				1.3;
+//** Headings small color
+@headings-small-color:        @gray;
+
+//** Lists colors
+// Lists line-height
+@list-line-height: 						1.7;
+// Color of bullets in unordered list
+@list-style-color: 						@brand-info;
+@description-list-dt-color: 	@brand-info;
+
+//** Addresses
+@address-devider-color: 			1px solid @brand-info;
+
+//** Blockquotes
+@blockquote-font-size:        @font-size-lead;
+@blockquote-source-color: 		@brand-info;
+@blockquote-source-devider: 	1px solid @brand-info;
+
+
+//** Page Titles
+@page-title-height: 					110px;
+@page-title-devider-color: 		lighten(@gray-light, 7%);
+@page-title-color: 						@text-color;
+@page-title-dark-bg: 					@text-color;
+
+
+//** Block Titles
+@block-title-badge-font-size: 	@font-size-small;
+@block-title-badge-font-color: 	@gray;
+
+
+//** Border radius
+@border-radius-base:        	8px;
+@border-radius-large:       	12px;
+@border-radius-small:       	4px;
+@border-radius-xs:       	 		2px;
+
+//** Alternative border radius
+@border-radius-alt-base:      24px;
+@border-radius-alt-large:     36px;
+@border-radius-alt-small:     18px;
+@border-radius-alt-xs:       	12px;
+
+
+//== Contextual colors and backgrounds
+//##
+
+@state-primary-text:             @brand-primary;
+@state-primary-bg:               lighten(@brand-primary, 10%);
+
+@state-success-text:             @brand-success;
+@state-success-bg:               lighten(@brand-success, 10%);
+
+@state-info-text:                @brand-info;
+@state-info-bg:                  lighten(@brand-info, 10%);
+
+@state-warning-text:             @brand-warning;
+@state-warning-bg:               lighten(@brand-warning, 10%);
+
+@state-danger-text:              @brand-danger;
+@state-danger-bg:                lighten(@brand-danger, 10%);
+
+
+//== Buttons
+//## Only variables that rewrite Bootstrap Defaults
+//## Other can be found in bootstrap/variables.less
+
+@btn-default-color:              #fff;
+@btn-default-bg:                 @brand-default;
+@btn-ghost-default-color: 			 @btn-default-bg;
+@btn-default-border:             @btn-ghost-default-color;
+
+@btn-primary-color:              #fff;
+@btn-primary-bg:                 @brand-primary;
+@btn-ghost-primary-color: 			 @btn-primary-bg;
+@btn-primary-border:             @btn-ghost-primary-color;
+
+@btn-success-color:              #fff;
+@btn-success-bg:                 @brand-success;
+@btn-ghost-success-color: 			 @btn-success-bg;
+@btn-success-border:             @btn-ghost-success-color;
+
+@btn-info-color:                 #fff;
+@btn-info-bg:                    @brand-info;
+@btn-ghost-info-color: 			 		 @btn-info-bg;
+@btn-info-border:                @btn-ghost-info-color;
+
+@btn-warning-color:              #fff;
+@btn-warning-bg:                 @brand-warning;
+@btn-ghost-warning-color: 			 @btn-warning-bg;
+@btn-warning-border:             @btn-ghost-warning-color;
+@btn-warning2-bg: 							 @brand-warning-2;
+
+@btn-danger-color:               #fff;
+@btn-danger-bg:                  @brand-danger;
+@btn-ghost-danger-color: 			 	 @btn-danger-bg;
+@btn-danger-border:              @btn-ghost-danger-color;
+
+@btn-light-color: 							 @gray-darker;
+@btn-light-bg:  								 #fff;
+@btn-light-ghost-color: 				 #fff;
+@btn-light-border: 				 			 @btn-light-ghost-color;
+
+@btn-round-width: 							 72px;
+@btn-icon-width: 							 	 36px;
+
+@btn-link-disabled-color:        @gray-light;
+
+//== Dropdowns
+@dropdown-menu-font-size: 			 		  @font-size-base;
+@dropdown-menu-divider-color:         @brand-info;
+@dropdown-menu-background-color:  		@body-bg-alt;
+@dropdown-menu-background-color-alt:  @body-bg;
+
+
+//== Forms
+//##
+
+/** Type 1 (Line variant) **/
+@input-line-height: 						 				48px;
+@input-line-font-size: 					 				@font-size-base;
+@input-line-border-color: 			 				#757575;
+@input-line-focus-border-color:  				@brand-primary;
+@input-line-font-color:  								@text-color;
+@input-line-label-color:  							#757575;
+@input-line-focus-label-color:  				@brand-primary;
+
+// Light version
+@input-line-light-border-color: 				@gray-light;
+@input-line-light-focus-border-color:  	#fff;
+@input-line-light-font-color:  					#fff;
+@input-line-light-label-color:  				@gray-light;
+@input-line-light-focus-label-color:  	#fff;
+
+@helper-text-font-size: 								@font-size-small;
+
+@input-error-color: 										@brand-danger;
+@input-success-color: 									@brand-success;
+
+/** Type 2 (Pills like variant) **/
+//** `<input>` background color
+@input-height: 									 48px;
+@input-height-large: 						 70px;
+@input-height-small: 						 36px;
+
+@input-font-size: 							 @font-size-base;
+
+@input-bg:                       @body-bg-alt;
+@input-bg-alt:                   @body-bg;
+
+@input-border-color: 						 transparent;
+@input-focus-border-color: 			 @brand-primary;
+
+//** Text color for `<input>`s
+@input-color:                    @text-color;
+
+//** Default `.form-control` border radius
+@input-border-radius:            @border-radius-alt-base;
+//** Large `.form-control` border radius
+@input-border-radius-large:      @border-radius-alt-large;
+//** Small `.form-control` border radius
+@input-border-radius-small:      @border-radius-alt-small;
+
+//** Placeholder text color
+@input-color-placeholder:        #757575;
+
+//** Disabled cursor for form controls and buttons.
+@cursor-disabled:                not-allowed;
+
+//** Checkboxes and radios custom styling
+@checkbox-radio-bg-color: 						@brand-primary;
+@checkbox-checked-bg-color: 					@brand-success;
+@radio-checked-bg-color: 							@brand-primary;
+@checkbox-radio-label-color: 					#757575;;	
+@checkbox-radio-label-font-size: 			@font-size-base;
+
+//** Selects custom styling
+@select-box-width-default:   220px; // 3 960px-grid columns
+@zindex-select-dropdown: 		 1035; // must be lower than a modal background (1040) but higher than the fixed navbar (1030)
+
+// Size Switches
+@size-switch-color: 				  @brand-primary;
+
+
+//** Horizontal line color.
+@hr-border:                   lighten(@gray-light, 7%);
+//** Text muted color
+@text-muted: 									@gray-light;
+
+
+//== Tables
+//
+
+@table-cell-padding: 						16px 12px;
+@table-condensed-cell-padding:  10px 8px;
+@table-border-color: 						lighten(@gray-light, 5%);
+@table-th-color: 								@brand-info;
+@table-caption-color: 					@brand-info;
+//** Background color used for `.table-striped`.
+@table-bg-accent:             	rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), 0.05);
+//** Background color used for `.table-hover`.
+@table-bg-hover:                @table-bg-accent;
+@table-bg-active:               @table-bg-hover;
+
+
+// Site logo
+@logo-max-width: 							115px;
+@logo-img-max-width: 					34px;
+@logo-big-img-max-width: 			90px;
+
+
+//== Navbar
+//
+
+// Top bar
+@topbar-background-color: 				 		 darken(@gray-lighter, 1%);
+@topbar-dark-background-color: 				 @gray-darker;
+@topbar-height: 									 		 48px;
+@topbar-zindex:                    		 1090;
+@switcher-dropdown-width: 				 		 60px;
+
+// Navbar main
+@navbar-height:                    		 96px;
+@navbar-mobile-height:          	 		 72px;
+@navbar-zindex:                    		 1080;
+@navbar-stuck-zindex:                  1095;
+@navbar-background-color: 				 		 #fafafa;
+@navbar-dark-background-color: 				 @gray-dark;
+
+// Site navigation
+@navbar-nav-font-size: 						 		 @font-size-base;
+@navbar-nav-color: 						 		 		 @link-color;
+@navbar-nav-hover-color: 					 		 @link-hover-color;
+@navbar-nav-active-color: 				 	 	 @navbar-nav-color;
+
+@navbar-submenu-width:             		 260px;
+@navbar-submenu-font-size:         		 @font-size-base;
+@navbar-submenu-background-color:  		 @body-bg-alt;
+@navbar-submenu-background-color-alt:  @body-bg;
+@navbar-submenu-border-color:     		 @brand-primary;
+@navbar-submenu-link-color:  		 			 @text-color;
+@navbar-submenu-link-active-color:     @brand-primary;
+@navbar-submenu-heading-font-size: 		 ceil((@font-size-base * 1.25)); // ~18px
+@navbar-submenu-heading-color: 				 @brand-info;
+
+// Shopping Cart Btn
+@navbar-cart-count-background: 		 		 @brand-success;
+@navbar-cart-btn-hover-color:      		 @brand-success;
+@navbar-cart-dropdown-width:       		 400px;
+
+// Mobile (Collapsed Navigation)
+@navbar-mobile-nav-link-active: 			 @text-color;
+@navbar-mobile-subnav-link-active: 		 @link-color;
+@navbar-mobile-nav-border-color: 			 lighten(@gray-light, 7%);
+
+// For vertically align navbar components we need to set their heights.
+@navbar-logo-height:               		 36px;
+
+
+// Modals
+//##
+
+@modal-background-color: 							 #fff;
+@modal-title-color: 									 @gray-light;
+@modal-form-max-width: 								 380px;
+@modal-zindex:                    		 1150;
+
+
+// Icons
+//##
+
+@icon-size:  							42px;
+@icon-size-2x:  					(@icon-size * 1.7);
+
+
+// Tabs
+//##
+
+@nav-tabs-font-size: 							@font-size-base;
+@nav-tabs-color: 									@link-color;
+@nav-tabs-color-active: 					@link-hover-color;
+@nav-tabs-alt-color:    					@brand-primary;
+@nav-tabs-alt-color-active:    		#fff;
+@nav-tabs-alt-border-radius: 			6px;
+@nav-tabs-alt-light-bg: 					rgba(255,255,255,.25);
+@nav-tabs-alt-light-active-bg: 		rgba(255,255,255,.8);
+
+
+// Panels / Accordions
+//##
+
+@panel-bg: 												@body-bg-alt;
+@panel-bg-alt: 										@body-bg;
+
+@panel-border-radius: 						0px;
+@panel-heading-font-size: 				@font-size-base;
+@panel-heading-divider-color:  		lighten(@gray-light, 7%);
+@panel-link-color: 								@text-color;
+@panel-link-active-color: 				@brand-primary;
+@panel-link-hover-bg:  						#f1f1f1;
+@panel-alt-link-hover-bg:  				darken(@panel-link-hover-bg, 2%);
+
+
+// Labels
+//##
+
+@label-color: 												 @brand-default;
+@label-primary-color:  								 @brand-primary;
+@label-success-color: 								 @brand-success;
+@label-info-color:  								 	 @brand-info;
+@label-warning-color:  								 @brand-warning;
+@label-danger-color:  								 @brand-danger;
+
+
+// Badges
+//##
+
+@badge-font-size: 										 @font-size-base;
+@badge-color: 												 #fff;
+@badge-bg-color: 											 @brand-default;
+@badge-border-radius: 								 @border-radius-base;
+@badge-circle-border-radius: 					 15px;
+@badge-line-height: 									 30px;
+
+@badge-default-bg-color: 							 @brand-default;
+@badge-primary-bg-color: 							 @brand-primary;
+@badge-success-bg-color: 							 @brand-success;
+@badge-info-bg-color: 							 	 @brand-info;
+@badge-warning-bg-color: 							 @brand-warning;
+@badge-danger-bg-color: 							 @brand-danger;
+
+
+//== List Groups
+//##
+
+@list-group-bg-color:  			 						@body-bg-alt;
+@list-group-alt-bg-color: 							@body-bg;
+
+@list-group-item-border-color: 					lighten(@gray-light, 7%);
+@list-group-item-link-color: 						@text-color;
+@list-group-item-link-hover-color: 			@text-color;
+@list-group-item-link-hover-bg: 				#f1f1f1;
+@list-group-alt-item-link-hover-bg: 		darken(@list-group-item-link-hover-bg, 2%);
+@list-group-item-link-active-color: 		@link-color;
+
+
+
+//== Tooltips
+//##
+
+@tooltip-bg:                  @gray-darker;
+@tooltip-opacity:             1;
+@tooltip-arrow-color:         @tooltip-bg;
+@tooltip-font-size:  					12px;
+@tooltip-font-color: 					#fff;
+@tooltip-border-radius: 			@border-radius-small;
+
+
+//== Popovers
+//##
+
+@popover-bg:                  	@gray-darker;
+@popover-max-width:           	260px;
+@popover-title-font-size: 			@font-size-base;
+@popover-title-font-color: 			#fff;
+@popover-title-bg: 							darken(@popover-bg, 4%);
+@popover-body-font-size: 				@font-size-small;
+@popover-body-font-color: 			@gray-light;
+@popover-border-radius: 				@border-radius-base;
+
+
+//== Post
+//##
+
+@post-meta-font-size: 				@font-size-xs;
+@post-meta-font-color: 				darken(@gray-light, 2%);
+
+
+//== Comments
+//##
+
+@comment-title-border-color: 	@hr-border;
+@comment-count-color: 				@brand-info;
+@comment-avatar-size: 				85px;
+@comment-meta-color: 					darken(@gray-light, 2%);
+
+
+//== Thumbnails
+//##
+
+@thumbnail-max-width:         270px;
+@thumbnail-padding:           4px;
+@thumbnail-bg:                transparent;
+@thumbnail-border:            lighten(@gray-light, 7%);
+@thumbnail-border-radius:     @border-radius-base;
+
+@thumbnail-caption-color:     @text-color;
+@thumbnail-caption-padding:   10px;
+
+
+//== Tiles
+//##
+
+@tile-max-width: 							400px;
+@tile-body-bg: 								@body-bg-alt;
+@tile-body-bg-alt: 						@body-bg;
+@tile-body-font-color: 				darken(@gray-light, 2%);
+
+@tile-overlay-color: 					rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .5);
+
+
+
+//== Ratings
+//##
+
+@rating-color-inactive:    		@gray-light;
+@rating-color-light: 					#fff;
+@rating-color-default: 				@brand-default;
+@rating-color-primary: 				@brand-primary;
+@rating-color-success: 				@brand-success;
+@rating-color-info: 					@brand-info;
+@rating-color-warning: 				@brand-warning-2;
+@rating-color-danger: 				@brand-danger;
+
+@rating-lg-size: 	  					32px;
+@rating-md-size: 	  					22px;
+@rating-sm-size: 	  					16px;
+
+
+// Maps
+//##
+
+//@map-collapse-max-height:    					600px;
+@map-collapse-toggle-height: 					48px;
+@map-collapse-toggle-color: 					#fff;
+@map-collapse-toggle-bg: 							@brand-primary;
+@map-collapse-toggle-opacity:   			.55;
+@map-collapse-toggle-hover-opacity:   .9;
+@map-info-box-bg: 										#fff;
+@map-info-box-opacity: 								.9;
+
+
+// Widgets
+//##
+
+@widget-max-width: 					 					 320px;
+@widget-title-font-size: 							 @font-size-base;
+@widget-subtitle-font-size: 					 @font-size-base;
+@widget-title-color: 									 @brand-info;
+@widget-subtitle-color: 							 darken(@gray-light, 1%);
+@widget-devider-color: 								 @brand-info;
+
+// Twitter Feed Widget
+@widget-twitter-feed-icon-color: 			 @brand-info;
+
+// Comments Widget
+@widget-comments-icon-color: 			 		 @brand-primary;
+
+// Testimonials Widget
+@widget-testimonial-bubble-font-color:  		 #fff;
+@widget-testimonial-bubble-font-size:  		   @font-size-large;
+@widget-testimonial-bubble-bg-color:   			 @brand-warning-2;
+@widget-testimonial-bubble-border-radius:    @border-radius-alt-base;
+@widget-testimonial-author-font-color: 			 @brand-info;
+
+// Shop Widgets
+@widget-shop-item-price-color: 							 @brand-success;
+@widget-shop-item-discount-color: 					 darken(@gray-light, 1%);
+@widget-shop-item-count-color: 							 darken(@gray-light, 1%);
+
+
+// Sidebar
+//##
+
+@sidebar-max-width: 					 			320px;
+@sidebar-divider-color:     				@brand-info;
+
+// Taken from Default Bootstrap Breakpoints @screen-md
+@sidebar-stack-screen-width: 				991px;
+
+
+// Sliders
+//##
+
+@slider-width: 											210px;
+@slider-height: 								 		6px;
+@slider-thin-height: 						 		3px;
+
+@slider-value-color: 								@brand-primary;
+
+@slider-handle-size:        				12px;
+@slider-thin-handle-size:        		9px;
+@slider-handle-color: 							#fff;
+@slider-handle-border-color: 				rgba(0, 0, 0, 0.28);
+@slider-handle-border-width: 				4px;
+
+@slider-tick-color: 								#ffcc00;
+
+@slider-track-color:  							@body-bg-alt;
+@slider-track-color-alt: 					  @body-bg;
+
+@slider-selection-color-default:  	@brand-default;
+@slider-selection-color-primary:  	@brand-primary;
+@slider-selection-color-success:  	@brand-success;
+@slider-selection-color-info:  			@brand-info;
+@slider-selection-color-warning:  	@brand-warning;
+@slider-selection-color-danger:  		@brand-danger;
+
+
+// Progress Bars
+//##
+
+@progress-track-color: 							@body-bg-alt;
+@progress-track-color-alt: 					@body-bg;
+
+@progress-bar-height: 							6px;
+@progress-thin-bar-height: 					3px;
+@progress-alt-bar-height: 					24px;
+
+@progress-bar-color-default:  			@brand-default;
+@progress-bar-color-primary:  			@brand-primary;
+@progress-bar-color-success:  			@brand-success;
+@progress-bar-color-info:  					@brand-info;
+@progress-bar-color-warning:  			@brand-warning;
+@progress-bar-color-danger:  				@brand-danger;
+
+@progress-label-default-color:  		@brand-default;
+@progress-alt-label-default-color:  #ccc;
+
+
+// Switches
+//##
+
+@switch-width: 										70px;
+@switch-height: 									24px;
+@switch-border-radius: 						12px;
+@switch-knob-border-radius: 			50%;
+
+@switch-default-color-on: 				@brand-default;
+@switch-default-color-off: 				darken(@gray-light, 7%);
+@switch-disabled-color: 					@disabled-bg;
+@switch-label-color: 							#fff;	
+
+@switch-primary-color: 					  @brand-primary;
+@switch-success-color: 						@brand-success;
+@switch-info-color: 							@brand-info;
+@switch-warning-color: 						@brand-warning;
+@switch-danger-color: 						@brand-danger;
+
+
+// Content Boxes
+//##
+
+@content-box-bg: 									@body-bg-alt;
+@content-box-bg-alt: 							@body-bg;
+
+
+// Alerts / Notifications
+//##
+
+@alert-bg: 										@body-bg-alt;
+@alert-bg-alt: 								@body-bg;
+@alert-border-radius:  				@border-radius-small;
+@alert-close-color: 					@brand-danger;
+@alert-confirm-color: 				@brand-success;
+
+@alert-default-color: 				@brand-default;
+@alert-primary-color: 				@brand-primary;
+@alert-success-color: 				@brand-success;
+@alert-info-color: 						@brand-info;
+@alert-warning-color: 				@brand-warning;
+@alert-danger-color: 				  @brand-danger;
+
+@alert-footer-border-color: 	darken(@gray-light, 8%);
+
+
+// Carousel
+//##
+
+@carousel-dots-size: 						 8px;
+@carousel-navs-color: 			     @brand-primary;
+@carousel-navs-opacity: 			   .4;
+@carousel-navs-size: 						 24px;
+@carousel-navs-hover-opacity: 	 1;
+@carousel-dots-color: 			     @brand-primary;
+@carousel-light-dots-color: 		 #fff;
+
+// Master Slider controls background color
+@ms-navs-color: 								 #252525;
+
+
+// Tags
+//##
+
+@tag-font-size: 							@font-size-base;
+@tag-border-radius: 					@border-radius-xs;
+
+
+// Pricing Plans
+//##
+
+@pricing-max-width: 						300px;
+
+@pricing-color-default:  				@brand-default;
+@pricing-color-primary:  				@brand-primary;
+@pricing-color-success:  				@brand-success;
+@pricing-color-info:  					@brand-info;
+@pricing-color-warning:  				@brand-warning;
+@pricing-color-danger:  				@brand-danger;
+
+@pricing-badge-color: 					@brand-warning;
+@pricing-badge-size: 						48px;
+
+@pricing-table-min-width: 		 	 940px;
+@pricing-table-border-color: 		 lighten(@gray-light, 5%);
+@pricing-table-highlighted:   	 @body-bg-alt;
+@pricing-table-highlighted-alt:  @body-bg;
+
+
+// Team
+//##
+
+@team-item-max-width: 							360px;
+@team-grid-item-overlay-bg: 				rgba(255,255,255,0.9);
+
+
+// Clients
+//##
+
+@client-content-box-max-width: 						280px;
+@client-content-box-thumb-max-width: 			180px;
+@client-content-box-thumb-sm-max-width: 	65px;
+
+
+// Grid border color
+@grid-border-color:  				@brand-info;
+
+
+// Background Video
+@bg-video-overaly-color: 			#000;
+@bg-video-overaly-opacity: 		.5;
+
+// Full Width Section
+@fw-section-overlay-opacity:  		.7;
+@fw-section-overlay-default-bg:   #000;
+@fw-section-overlay-light-bg:  		#fff;
+@fw-section-overlay-primary-bg:   @brand-primary;
+@fw-section-overlay-success-bg:   @brand-success;
+@fw-section-overlay-info-bg:   		@brand-info;
+@fw-section-overlay-warning-bg:   @brand-warning;
+@fw-section-overlay-danger-bg:    @brand-danger;
+
+
+// Timelines
+//##
+
+@timeline-date-cell-width: 			95px;
+@timeline-date-color: 					darken(@gray-light, 6%);
+@timeline-date-font-size: 			@font-size-small;
+@timeline-event-font-size: 			@font-size-base;
+@timeline-border-color: 				@gray-light;
+
+@timeline-dot-default-color: 		@brand-default;
+@timeline-dot-primary-color: 		@brand-primary;
+@timeline-dot-success-color: 		@brand-success;
+@timeline-dot-info-color: 			@brand-info;
+@timeline-dot-warning-color: 		@brand-warning;
+@timeline-dot-danger-color: 		@brand-danger;
+
+
+// Counters
+//##
+
+@counter-bg: 											@body-bg-alt;
+@counter-bg-alt: 									@body-bg;
+@counter-digits-font-size: 				floor(@font-size-large * 3);
+@counter-label-font-size: 				ceil((@font-size-base * 1.25)); // ~18px
+@counter-icon-size: 							22px;
+
+
+// Banners
+//##
+
+@banner-overlay-color:  					@brand-primary;
+@banner-overlay-opacity:  				.5;
+@banner-hover-overlay-opacity:  	.8;
+@banner-title-color: 							#fff;
+
+
+// Shop
+//##
+
+@shop-price-color: 							@brand-success;
+@shop-old-price-color: 					darken(@gray-light, 2%);
+@shop-wishlist-btn-color: 			@brand-danger;
+
+
+// Footer
+//##
+
+@footer-light-bg: 							@body-bg-alt;
+@footer-light-bg-alt: 					@body-bg;
+@subfooter-light-bg: 						darken(@gray-lighter, 1%);
+@footer-dark-bg: 								@gray-dark;
+@subfooter-dark-bg: 						@gray-darker;
+@footer-dark-color:     				@gray-light;
+@footer-dark-link-color:     		#fff;
+
+@footer-logo-img-max-width: 		45px;
+
+@copyright-font-size: 					12px;
+
+
+// Preloader
+//##
+
+@preloader-size: 								32px;
+@preloader-bg-color: 						#fff;
+@preloader-spinner-color: 			@brand-primary;
+@preloader-bg-zindex: 					9990;
+@preloader-spinner-zindex: 			9999;
+
+
+//== Media queries (responsive breackpoints)
+//## Descktop, Tablet, Mobile
+
+@desktop:   		   ~"screen and (max-width: 1200px)";
+@tablet-land:      ~"screen and (max-width: 991px)";
+@tablet-port:    	 ~"screen and (max-width: 768px)";
+@mobile-land:		 	 ~"screen and (max-width: 480px)";
+@mobile-port:		 	 ~"screen and (max-width: 360px)";
+
+// Navigation collapse breakpoint (max-width)
+@topbar-hidden:	 ~"screen and (max-width: 991px)";
+
+// Navigation collapse breakpoint (max-width)
+@nav-collapse:	 ~"screen and (max-width: 991px)";

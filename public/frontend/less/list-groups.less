@@ -1,0 +1,136 @@
+//
+// List Groups
+// --------------------------------------------------
+
+// Base class
+.list-group {
+  display: block;
+  list-style: none;
+  padding: 0 0 0 24px;
+  margin-bottom: floor(@line-height-computed * 1.2); 
+  background-color: @list-group-bg-color;
+  overflow: hidden;
+
+  // List group item
+  .list-group-item {
+    display: block;
+    position: relative;
+    padding: 13px 24px 13px 0;
+    border-top: 1px solid @list-group-item-border-color;
+    &:first-child { border-top: none; }
+    .list-group-item-text {
+      display: block;
+      font-size: @font-size-small;
+      line-height: 1.5;
+      margin: 10px 0 0 0;
+    }
+  }
+
+  // Linked items
+  &.list-group-linked {
+    padding-left: 0;
+    a.list-group-item {
+      padding: 14px 40px 15px 24px;
+      color: @list-group-item-link-color;
+      border: none;
+      cursor: pointer;
+      .transition(background-color, .3s);
+      &:hover, &:focus { opacity: 1; }
+      &:hover { background-color: @list-group-item-link-hover-bg; }
+      &.active { color: @list-group-item-link-active-color; }
+      &:before {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: @list-group-item-border-color;
+        top: 0;
+      }
+      &:first-child:before { display: none; }
+      &:after {
+        display: block;
+        position: absolute;
+        font-family: 'Pe-icon-7-stroke';
+        content: "\e684";
+        font-size: 28px;
+        color: @list-group-item-link-active-color;
+        top: 50%;
+        right: 16px;
+        margin-top: -20px;
+      }
+    }
+  }
+
+  // With badge
+  &.with-badge {
+    padding-left: (@badge-line-height + 24px + 12px);
+
+    .badge {
+      position: absolute;
+      top: 11px;
+      left: -(@badge-line-height + 12px);
+    }
+
+    &.list-group-linked {
+      padding-left: 0;
+      a.list-group-item {
+        padding-left: (@badge-line-height + 24px + 12px);
+      }
+      .badge {
+        left: 24px;
+      }
+    }
+  }
+
+  // Ghost version
+  &.list-group-ghost {
+    background-color: transparent;
+    a.list-group-item:hover {
+      background-color: @list-group-alt-item-link-hover-bg;
+    }
+
+    &.list-group {
+      padding-left: 0;
+      &.with-badge {
+        padding-left: (@badge-line-height + 12px);
+        &.list-group-linked { padding-left: 0; }
+      }
+    }
+  }
+}
+
+// When Body Alt
+.body-alt {
+  .list-group {
+    background-color: @list-group-alt-bg-color;
+    a.list-group-item:hover {
+      background-color: @list-group-alt-item-link-hover-bg;
+    }
+  }
+  .list-group.list-group-ghost {
+    background-color: transparent;
+    a.list-group-item:hover {
+      background-color: @list-group-item-link-hover-bg;
+    }
+  }
+}
+
+// Light Skin
+.text-light {
+  .list-group,
+  &.list-group {
+    background-color: transparent;
+    border: 1px solid #fff;
+    &.list-group-ghost {
+      border: none;
+    }
+    a.list-group-item,
+    a.list-group-item:after {
+      color: #fff;
+    }
+    a.list-group-item:hover {
+      background-color: rgba(255, 255, 255, 0.16);
+    }
+  }
+}

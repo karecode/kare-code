@@ -1,0 +1,148 @@
+//
+// Dropdowns
+// dependency: bootstrap/dropdowns.less
+// --------------------------------------------------
+
+// Caret
+//---------------------------------------------------
+.caret {
+  display: inline-block;
+  font-family: 'Flaticon';
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  margin-left: 6px !important;
+  vertical-align: middle;
+  border: none;
+  &:before {
+    content: "\e04c";
+  }
+}
+.btn.dropdown-toggle .caret,
+.btn-ghost.dropdown-toggle .caret {
+ margin-left: 16px !important;
+ margin-right: 8px;
+}
+.btn-group > .btn + .dropdown-toggle,
+.btn-group > .btn-ghost + .dropdown-toggle {
+  .caret {
+    margin-left: 10px !important;
+    margin-right: 12px;
+  }
+}
+.dropup {
+  .caret:before {
+    content: "\e023";
+  }
+}
+
+// Dropdown menu
+// --------------------------------------------------
+.dropdown-menu {
+	padding: 12px 0;
+  margin-top: -6px;
+  font-size: @font-size-small;
+  border: none;
+  border-radius: @border-radius-small;
+  background-color: @dropdown-menu-background-color;
+  box-shadow: none;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+	
+	> li {
+    margin: 1px 0;
+    // Links within the dropdown menu
+    > a {
+      color: @text-color;
+      font-size: @dropdown-menu-font-size; 
+      line-height: 1.5 !important;
+      padding: 8px 34px;
+      &:hover,
+      &:focus {
+        opacity: 1;
+        color: @text-color;
+        .rgbaBackground(@navbar-nav-color, .1);
+      }
+    }
+    &.active a,
+    &.active a:hover,
+    &.active a:focus {
+      opacity: 1;
+      color: @text-color;
+      .rgbaBackground(@navbar-nav-color, .1);
+    }
+    &.disabled {
+      & > a {
+        pointer-events: none;
+        color: @disabled-color;
+      }
+    }
+
+    // Divider
+    &.divider {
+      background-color: @dropdown-menu-divider-color;
+      margin: 8px 0;
+    }
+	}
+}
+
+//When Alt Body
+.body-alt .dropdown-menu {
+  background-color: @dropdown-menu-background-color-alt;
+}
+
+// Open state for the dropdown
+//
+.open {
+  > .dropdown-menu {
+    opacity: 1;
+    -webkit-animation-name: fadeInUp;
+            animation-name: fadeInUp;
+  }
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 15px, 0);
+            transform: translate3d(0, 15px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 15px, 0);
+            transform: translate3d(0, 15px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+.btn-group.open .dropdown-toggle {
+  box-shadow: none;
+  &.btn-ghost.btn-default,
+  &.btn-ghost.btn-primary,
+  &.btn-ghost.btn-success,
+  &.btn-ghost.btn-info,
+  &.btn-ghost.btn-warning,
+  &.btn-ghost.btn-danger { color: #fff; }
+  &.btn-ghost.btn-default { background-color: @btn-default-border; }
+  &.btn-ghost.btn-primary { background-color: @btn-primary-border; }
+  &.btn-ghost.btn-success { background-color: @btn-success-border; }
+  &.btn-ghost.btn-info { background-color: @btn-info-border; }
+  &.btn-ghost.btn-warning { background-color: @btn-warning-border; }
+  &.btn-ghost.btn-danger { background-color: @btn-danger-border; }
+}
+
+// Dropdown section headers
+.dropdown-header {
+  padding: 7px 44px !important;
+}

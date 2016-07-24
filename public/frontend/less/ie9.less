@@ -1,0 +1,53 @@
+//
+// IE9 Support Styles
+// --------------------------------------------------
+
+// Gradient Support
+.block-title-with-badge {
+	.block-title-badge {
+		.icon {
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#50fbdc', endColorstr='#56c2f4', GradientType=0 );
+		}
+		&.alt-color .icon {
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ff00', endColorstr='#00ffcc', GradientType=0 );
+		}
+		&.alt-color-2 .icon {
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ff80', endColorstr='#0077ff', GradientType=0 );
+		}
+		&.alt-color-3 .icon {
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bbff', endColorstr='#007bff', GradientType=0 );
+		}
+		&.alt-color-4 .icon {
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4cd963', endColorstr='#18b535', GradientType=0 );
+		}
+		&.solid-default .icon,
+		&.solid-primary .icon,
+		&.solid-success .icon,
+		&.solid-info .icon,
+		&.solid-warning .icon,
+		&.solid-danger .icon { filter: none; }
+	}
+}
+.btn-app-store {
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#242424', GradientType=0 );
+}
+.btn-gradient {
+	&.btn-default {
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#313131', GradientType=0 ) !important;
+	}
+	&.btn-primary {
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#92b5f5', endColorstr='#c75ae0', GradientType=0 ) !important;
+	}
+	&.btn-success {
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18b536', endColorstr='#4cd964', GradientType=0 ) !important;
+	}
+	&.btn-info {
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#51f1fc', endColorstr='#5ac8fa', GradientType=0 ) !important;
+	}
+	&.btn-warning {
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffcc', endColorstr='#f2ff00', GradientType=0 ) !important;
+	}
+	&.btn-danger {
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff2676', endColorstr='#ff2d55', GradientType=0 ) !important;
+	}
+}

@@ -1,0 +1,23 @@
+.ms-laptop-template .ms-laptop-cont {
+  max-width: 645px;
+	position: relative;
+	margin: 0 auto;
+}
+.ms-laptop-template .ms-lt-slider-cont {
+  position: relative;
+  padding: 5% 11.9% 20%;
+}
+.ms-laptop-template .ms-laptop-bg {
+  max-width: 100%;
+  position: absolute;
+}
+.ms-laptop-template .ms-nav-prev {
+  left: -60px !important;
+}
+.ms-laptop-template .ms-nav-next {
+	right: -60px !important;
+	left:auto;
+}
+.ms-laptop-template .ms-bullets.ms-dir-h {
+	bottom: -30%;
+}

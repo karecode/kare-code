@@ -1,0 +1,232 @@
+//
+// Alerts + Notifications as type of alert
+// dependency: bootstrap/alerts.less
+// --------------------------------------------------
+
+// Base class
+.alert {
+	position: relative;
+	padding: 14px 25px 14px 25px;
+  background-color: @alert-bg;
+  border-radius: @alert-border-radius;
+
+  &.alert-dismissible { padding-right: 45px; }
+	
+	// Close button
+  .close {
+  	display: block;
+  	position: absolute;
+  	font-size: 21px;
+  	top: 9px;
+  	right: 25px;
+  	border: none;
+  	background: transparent;
+  	padding: 0;
+  	color: @alert-close-color;
+		font-weight: 300;
+  	opacity: 1;
+  	.transition(opacity, .25s);
+  	.backface-visibility(hidden);
+  	&:focus, &:active { outline: none; }
+  	&:hover { opacity: .6; }
+  }
+
+  // Color variations
+  &.alert-default, &.alert-primary, &.alert-gradient,
+  &.alert-success, &.alert-info, &.alert-warning,
+  &.alert-danger {
+  	color: #fff;
+  	.close, a { color: #fff; }
+  }
+  &.alert-default { background-color: @alert-default-color !important; }
+  &.alert-primary { background-color: @alert-primary-color !important; }
+  &.alert-success { background-color: @alert-success-color !important; }
+  &.alert-info 		{ background-color: @alert-info-color !important; }
+  &.alert-warning { background-color: @alert-warning-color !important; }
+  &.alert-danger  { background-color: @alert-danger-color !important; }
+
+  // Ghost version
+  &.alert-ghost {
+    padding: 13px 25px 13px 25px;
+  	background: none !important;
+  	border: 1px solid @alert-default-color;
+  	color: @alert-default-color;
+  	.close { color: @alert-close-color; }
+	  &.alert-default { border-color: @alert-default-color; }
+	  &.alert-primary {
+	  	color: @alert-primary-color;
+	  	border-color: @alert-primary-color;
+	  }
+	  &.alert-success {
+	  	color: @alert-success-color;
+	  	border-color: @alert-success-color;
+	  }
+	  &.alert-info {
+	  	color: @alert-info-color;
+	  	border-color: @alert-info-color;
+	  }
+	  &.alert-warning {
+	  	color: @alert-warning-color;
+	  	border-color: @alert-warning-color;
+	  }
+	  &.alert-danger {
+	  	color: @alert-danger-color;
+	  	border-color: @alert-danger-color;
+	  }
+  }
+
+  // Alternative version
+  &.alert-alt {
+  	text-align: center;
+  	padding: 0;
+  	padding-top: floor(@line-height-computed * 1.5);
+  	.alert-title {
+  		font-size: @font-size-large;
+  		font-weight: bold;
+  		margin-bottom: @line-height-computed; 
+  	}
+  	.body { padding: 0 25px; }
+  	footer { margin-top: floor(@line-height-computed * 1.6); }
+  	footer {
+  		display: table;
+  		width: 100%;
+  		table-layout: fixed;
+  		border-top: 1px solid @alert-footer-border-color;
+  		a, button {
+  			display: table-cell;
+				vertical-align: middle;
+  			background: none;
+  			border: none;
+				font-size: @font-size-large;
+				font-weight: 600;
+				color: @text-color;
+				border-left: 1px solid @alert-footer-border-color;
+				padding: floor(@line-height-computed / 2);
+				.transition(color, .25s);
+				&:first-child { border-left: none; }
+				&:hover, &:focus { opacity: 1; outline: none; }
+				&.cancel:hover { color: @alert-close-color; }
+				&.confirm:hover { color: @alert-confirm-color; }
+  		}
+  	}
+  	.buttons {
+  		padding: 26px 0 20px 0;
+  		.btn { margin: 8px;  }
+  	}
+  }
+
+  p { margin-bottom: 0; }
+}
+
+// Notifications
+// --------------------------------------------------
+.notification {
+  border-radius: 0;
+  padding: 24px 0;
+
+  .inner {
+    display: table;
+    width: 100%;
+
+    .column {
+      position: relative;
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 15px;
+      &:first-child { padding-left: 0; }
+      &:last-child { padding-right: 50px; }
+    }
+  }
+  .notif-icon {
+    width: 25px;
+    i { font-size: 24px; }
+  }
+  a:not(.btn) {
+    color: @text-color;
+    white-space: nowrap;
+    .transition(color, .3s);
+    &:hover, &:focus { opacity: 1; }
+    &:hover { color: @link-hover-color; }
+  }
+  .w-item-title a {
+    color: @link-color;
+    .transition(opacity, .3s);
+     &:hover { opacity: .6; }
+  }
+  p { margin-bottom: 0; }
+  .close {
+    top: 50%;
+    right: 0;
+    margin-top: -16px;
+  }
+  .btn { margin: 0; }
+  &.alert-default, &.alert-primary, &.alert-gradient,
+  &.alert-success, &.alert-info, &.alert-warning,
+  &.alert-danger {
+    a:not(.btn) {
+      color: #fff;
+      .transition(opacity, .3s);
+      & > strong { font-weight: 600; }
+      &:hover { opacity: .6; }
+    }
+  }
+  
+  .container {
+    position: relative;
+    & > .close {
+      top: 0;
+      right: 15px;
+      margin-top: 0;
+    }
+  }
+
+  @media @tablet-port {
+    text-align: center;
+    .inner,
+    .inner .column,
+    .inner .column:last-child {
+      display: block;
+      width: 100%;
+      padding: 0;
+    }
+    .inner { position: relative; }
+    .inner .column {
+      position: static;
+    }
+    .inner .column:last-child {
+      margin-top: floor(@line-height-computed / 1.5);
+    }
+    .inner .column.text-right {
+      text-align: center !important;
+    }
+    .notif-icon {
+      margin-bottom: floor(@line-height-computed / 1.5);
+    }
+    .close {
+      top: -15px;
+      margin-top: 0;
+    }
+    .widget { text-align: left; }
+  }
+}
+
+// When Body Alt
+.body-alt .alert {
+	background-color: @alert-bg-alt;
+}
+
+// Light version
+.text-light {
+  .alert,
+  &.alert {
+    color: #fff;
+    background-color: rgba(255,255,255,.15);
+    .cancel, .confirm, .close { color: #fff; }
+    &.alert-ghost { border-color: #fff; }
+    &.alert-alt {
+      footer, 
+      footer a,
+      footer button { border-color: rgba(255,255,255,.7); }
+    }
+  }
+}

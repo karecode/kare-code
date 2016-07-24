@@ -1,0 +1,61 @@
+//
+// Dividers
+// --------------------------------------------------
+
+hr {
+  margin-top: @line-height-computed;
+  margin-bottom: @line-height-computed;
+  border-top: 1px solid @hr-border;
+
+  // No Space
+  &.no-space { margin: 0; }
+}
+
+// Variants
+.hr-default { border-color: @brand-default; }
+.hr-primary { border-color: @brand-primary; }
+.hr-success { border-color: @brand-success; }
+.hr-info { border-color: @brand-info; }
+.hr-warning { border-color: @brand-warning; }
+.hr-danger { border-color: @brand-danger; }
+
+// Dahsed line
+.hr-dashed { border-style: dashed; }
+  
+// Dotted line
+.hr-dotted { border-style: dotted; }
+
+// Bold line
+.hr-bold { border-width: 4px; }
+  
+// Gradient line
+.hr-gradient {
+  border: none;
+  height: 4px;
+
+  &.hr-gradient-1 {
+    .gradient-horizontal (#00ff80, #0076ff);
+  }
+  &.hr-gradient-2 {
+    .gradient-horizontal (#ff8d00, #ffcc00);
+  }
+  &.hr-gradient-3 {
+    .gradient-horizontal (#50fbdc, #56c2f4);
+  }
+  &.hr-gradient-4 {
+    .gradient-horizontal (#00ffcc, #f2ff00);
+  }
+  &.hr-gradient-5 {
+    .gradient-horizontal (#92b5f5, #c75ae0);
+  }
+  &.hr-gradient-6 {
+    .gradient-horizontal (#391cff, #fc3b33);
+  }
+}
+
+// Light version
+.text-light {
+  hr, &hr{
+    border-color: #fff !important;
+  }
+}

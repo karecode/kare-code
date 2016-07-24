@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>iTheme | Text Columns</title>
+
+  <!--SEO Meta Tags-->
+  <meta name="description" content="iTheme - Multipurpose HTML5 Theme" />
+  <meta name="keywords" content="multipurpose, ios, material, blog, shop, portfolio, specialty pages, landing, elements, shortcodes, html5, css3, jquery, js, modernizr, gallery, slider, touch, mobile" />
+  <meta name="author" content="8Guild" />
+
+  <!--Mobile Specific Meta Tag-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+  <!-- All Theme Styles including Bootstrap, FontAwesome, etc. compiled from styles.less-->
+  <link href="../css/styles.css" rel="stylesheet" media="screen">
+
+  <!-- Preloader (Pace.js) -->
+  <script src="../js/plugins/pace.min.js"></script>
+
+  <!--Modernizr / Detectizr-->
+  <script src="../js/libs/modernizr.custom.js"></script>
+  <script src="../js/libs/detectizr.min.js"></script>
+
+</head>
+
+<!-- Body -->
+<!-- Add ".body-alt" class to <body> for alternative color option. -->
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader-bg"></div>
+  <div class="preloader">
+    <span></span>
+  </div>
+    
+  <!-- Fake scrollbar (when open popups/modals) -->
+  <div class="fake-scrollbar"></div>
+
+  <!-- Login / Sign Up Modal -->
+  <div class="modal fade" id="login-modal">
+    <div class="modal-dialog">
+      <div class="container">
+        <div class="modal-form">
+          <div class="tab-content">
+            <!-- Sign in form -->
+            <form class="tab-pane transition scale fade in active" id="signin-form" autocomplete="off">
+              <h3 class="modal-title space-bottom-2x">Sign In</h3>
+              <div class="form-input">
+                <input type="email" name="si_email" id="si_email" readonly onfocus="$(this).removeAttr('readonly');" required>
+                <label for="si_email">Email</label>
+                <span class="error-label"></span>
+                <span class="valid-label"></span>
+              </div>
+              <div class="form-input">
+                <a class="helper-link" href="#">Forgot password?</a>
+                <input type="password" name="si_password" id="si_password" readonly onfocus="$(this).removeAttr('readonly');" required>
+                <label for="si_password">Password</label>
+                <span class="error-label"></span>
+                <span class="valid-label"></span>
+              </div>
+              <label class="checkbox">
+                <input type="checkbox"> Remember me
+              </label>
+              <div class="space-top-2x clearfix">
+                <button type="button" class="btn btn-round btn-ghost btn-danger pull-left" data-dismiss="modal"><i class="flaticon-cross37"></i></button>
+                <button type="submit" class="btn btn-round btn-ghost btn-success pull-right"><i class="flaticon-correct7"></i></button>
+              </div>
+              <!-- Switching forms (Fake nav tab) -->
+              <div class="form-switch helper-text space-top-2x">Don`t have an account? <a href="#form-1">Sign up for iTheme</a></div>
+            </form>
+            <!-- Sign up form -->
+            <form class="tab-pane transition scale fade" id="signup-form">
+              <h3 class="modal-title space-bottom-2x">Sign Up</h3>
+              <div class="form-input">
+                <input type="email" name="su_email" id="su_email" required>
+                <label for="su_email">Email</label>
+                <span class="error-label"></span>
+                <span class="valid-label"></span>
+              </div>
+              <div class="form-input">
+                <input type="password" name="su_password" id="su_password"  required>
+                <label for="su_password">Password</label>
+                <span class="error-label"></span>
+                <span class="valid-label"></span>
+              </div>
+              <div class="form-input">
+                <input type="password" name="su_password_repeat" id="su_password_repeat" required>
+                <label for="su_password_repeat">Repeat password</label>
+                <span class="error-label"></span>
+                <span class="valid-label"></span>
+              </div>
+              <label class="checkbox">
+                <input type="checkbox"> Subscribe for our news
+              </label>
+              <div class="space-top-2x clearfix">
+                <button type="button" class="btn btn-round btn-ghost btn-danger pull-left" data-dismiss="modal"><i class="flaticon-cross37"></i></button>
+                <button type="submit" class="btn btn-round btn-ghost btn-success pull-right"><i class="flaticon-correct7"></i></button>
+              </div>
+              <!-- Switching forms (Fake nav tab) -->
+              <div class="form-switch helper-text space-top-2x">Already have an account? <a href="#form-2">Sign in</a></div>
+            </form>
+          </div>
+          <!-- Hidden real nav tabs -->
+          <ul class="nav-tabs hidden">
+            <li id="form-1"><a href="#signup-form" data-toggle="tab">Sign up</a></li>
+            <li id="form-2"><a href="#signin-form" data-toggle="tab">Sign in</a></li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <!-- Search Modal -->
+  <div class="modal fade" id="search-modal">
+    <div class="modal-dialog">
+      <div class="container">
+        <!-- Search form -->
+        <form class="modal-form" id="search-form">
+          <h3 class="modal-title space-bottom-2x">Search</h3>
+          <div class="form-input">
+            <input type="text" name="search_inpt" id="search_inpt" required>
+            <label for="search_inpt">Type to search</label>
+            <span class="error-label"></span>
+            <span class="valid-label"></span>
+          </div>
+          <div class="space-top-2x clearfix">
+            <button type="button" class="btn btn-round btn-ghost btn-danger pull-left" data-dismiss="modal"><i class="flaticon-cross37"></i></button>
+            <button type="submit" class="btn btn-round btn-ghost btn-success pull-right"><i class="pe-7s-search"></i></button>
+          </div>
+        </form>
+      </div>
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+  <!-- Top Bar -->
+  <!-- The screen width at which topbar disappears can be controlled through the variable "@topbar-hidden" in less/variables.less -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="social-buttons">
+        <a href="#" class="sb-twitter cbutton cbutton--effect"><i class="bi-twitter"></i></a>
+        <a href="#" class="sb-google-plus cbutton cbutton--effect"><i class="bi-gplus"></i></a>
+        <a href="#" class="sb-facebook cbutton cbutton--effect"><i class="bi-facebook"></i></a>
+        <a href="#" class="sb-skype"><i class="bi-skype"></i>8guild</a>
+        <!-- <a href="#" class="sb-behance"><i class="bi-behance"></i></a> -->
+        <!-- <a href="#" class="sb-bitbucket"><i class="bi-bitbucket"></i></a> -->
+        <!-- <a href="#" class="sb-codepen"><i class="bi-codepen"></i></a> -->
+        <!-- <a href="#" class="sb-deviantart"><i class="bi-deviantart"></i></a> -->
+        <!-- <a href="#" class="sb-digg"><i class="bi-digg"></i></a> -->
+        <!-- <a href="#" class="sb-dribbble"><i class="bi-dribbble"></i></a> -->
+        <!-- <a href="#" class="sb-dropbox"><i class="bi-dropbox"></i></a> -->
+        <!-- <a href="#" class="sb-flickr"><i class="bi-flickr"></i></a> -->
+        <!-- <a href="#" class="sb-foursquare"><i class="bi-foursquare"></i></a> -->
+        <!-- <a href="#" class="sb-github"><i class="bi-github"></i></a> -->
+        <!-- <a href="#" class="sb-instagram"><i class="bi-instagram"></i></a> -->
+        <!-- <a href="#" class="sb-jsfiddle"><i class="bi-jsfiddle"></i></a> -->
+        <!-- <a href="#" class="sb-lastfm"><i class="bi-lastfm"></i></a> -->
+        <!-- <a href="#" class="sb-linkedin"><i class="bi-linkedin"></i></a> -->
+        <!-- <a href="#" class="sb-paypal"><i class="bi-paypal"></i></a> -->
+        <!-- <a href="#" class="sb-pinterest"><i class="bi-pinterest-circled"></i></a> -->
+        <!-- <a href="#" class="sb-reddit"><i class="bi-reddit"></i></a> -->
+        <!-- <a href="#" class="sb-soundcloud"><i class="bi-soundcloud"></i></a> -->
+        <!-- <a href="#" class="sb-stackoverflow"><i class="bi-stackoverflow"></i></a> -->
+        <!-- <a href="#" class="sb-steam"><i class="bi-steam"></i></a> -->
+        <!-- <a href="#" class="sb-stumbleupon"><i class="bi-stumbleupon"></i></a> -->
+        <!-- <a href="#" class="sb-trello"><i class="bi-trello"></i></a> -->
+        <!-- <a href="#" class="sb-tumblr"><i class="bi-tumblr"></i></a> -->
+        <!-- <a href="#" class="sb-twitch"><i class="bi-twitch"></i></a> -->
+        <!-- <a href="#" class="sb-vimeo"><i class="bi-vimeo-squared"></i></a> -->
+        <!-- <a href="#" class="sb-vine"><i class="bi-vine"></i></a> -->
+        <!-- <a href="#" class="sb-vk"><i class="bi-vkontakte"></i></a> -->
+        <!-- <a href="#" class="sb-wechat"><i class="bi-wechat"></i></a> -->
+        <!-- <a href="#" class="sb-wordpress"><i class="bi-wordpress"></i></a> -->
+        <!-- <a href="#" class="sb-xing"><i class="bi-xing"></i></a> -->
+        <!-- <a href="#" class="sb-yahoo"><i class="bi-yahoo"></i></a> -->
+        <!-- <a href="#" class="sb-yelp"><i class="bi-yelp"></i></a> -->
+        <!-- <a href="#" class="sb-youtube"><i class="bi-youtube"></i></a> -->
+      </div>
+
+      <!-- Switchers -->
+      <ul class="switchers">
+      <!-- Language Switcher -->
+        <li><a href="#">Usd</a>
+          <ul class="dropdown">
+            <li><a href="#">Usd</a></li>
+            <li><a href="#">Eur</a></li>
+            <li><a href="#">Chf</a></li>
+          </ul>
+        </li>
+        <!-- Language Switcher -->
+        <li><a href="#">En</a>
+          <ul class="dropdown">
+            <li><a href="#">De</a></li>
+            <li><a href="#">Fr</a></li>
+            <li><a href="#">Ru</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <!-- Add class ".navbar-sticky" to make navbar stuck when it hits the top of the page. You can also use modifier classes like: "navbar-dark", "navbar-ghost navbar-ghost-light", .navbar-ghost navbar-ghost-dark" to change navbar apperance. The screen width at which navbar collapses can be controlled through the variable "@nav-collapse" in less/variables.less -->
+  <header class="navbar navbar-sticky">
+    <div class="container">
+      <!-- Logo icon width can be adjusted trough the variable '@logo-img-max-width' in less/variables.less. The logo width (icon + text) can be adjusted trough the variable '@logo-max-width' in less/variables.less. -->
+      <a href="../index.html" class="logo">
+        <img src="../img/logo/logo-007aff.png" alt="iTheme">
+        <span>iTheme</span>
+      </a>
+
+      <!-- Site Navigation -->
+      <nav class="navbar-nav" id="site-menu">
+
+        <!-- Mobile Tools (Visible only when navbar collapsed) -->
+        <div class="mobile-navbar-tools">
+          <div class="switchers">
+            <div class="column">
+              <a href="#" class="active">Usd</a>
+              <a href="#">Eur</a>
+              <a href="#">Chf</a>
+            </div>
+            <div class="column">
+              <a href="#" class="active">En</a>
+              <a href="#">De</a>
+              <a href="#">Fr</a>
+            </div>
+          </div>
+          <div class="tools">
+            <div class="column">
+              <a href="#" data-toggle="modal" data-target="#login-modal" data-modal-form="sign-up">Sign Up</a>
+              <a href="#" data-toggle="modal" data-target="#login-modal" data-modal-form="sign-in" class="text-success">Login</a>
+            </div>
+            <div class="column">
+              <a href="#" class="sb-twitter cbutton cbutton--effect"><i class="bi-twitter"></i></a>
+              <a href="#" class="sb-google-plus cbutton cbutton--effect"><i class="bi-gplus"></i></a>
+              <a href="#" class="sb-facebook cbutton cbutton--effect"><i class="bi-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <ul>
+          <li class="has-submenu"><a href="#">Home</a>
+            <ul class="submenu">
+              <li><a href="../index.html">Introduction Page</a></li>
+              <li class="has-sub-submenu">
+                <a href="#">Corporate Homepage</a>
+                <ul class="sub-submenu">
+                  <li><a href="../home-corporate-static-bg.html">Static Image Background</a></li>
+                  <li><a href="../home-corporate-fullscreen-video.html">Video Fullscreen Background</a></li>
+                  <li><a href="../home-corporate-fullwidth-slider.html">Full Width Slider (Revolution Slider)</a></li>
+                  <li><a href="../home-corporate-fullscreen-slider.html">Fullscreen Slider (Revolution Slider)</a></li>
+                </ul>
+              </li>
+              <li class="has-sub-submenu">
+                <a href="#">Business Areas</a>
+                <ul class="sub-submenu">
+                  
+                  <li><a href="../home-business-restaurant.html">Culinary / Restaurant</a></li>
+                  <li><a href="../home-business-it.html">IT / Software Development</a></li>
+                </ul>
+              </li>
+              <li class="has-sub-submenu">
+                <a href="#">Portfolio Homepage</a>
+                <ul class="sub-submenu">
+                  <li><a href="../home-portfolio-web-agency.html">Web Agency</a></li>
+                  <li><a href="../home-portfolio-photographer.html">Photographer</a></li>
+                  <li><a href="../home-portfolio-freelancer.html">Freelancer</a></li>
+                </ul>
+              </li>
+              <li class="has-sub-submenu">
+                <a href="#">Shop Homepage</a>
+                <ul class="sub-submenu">
+                  <li><a href="../home-shop-fullscreen-slider.html">Fullscreen Slider (Revolution Slider)</a></li>
+                  <li><a href="../home-shop-fullwidth-slider.html">Full Width Slider (Revolution Slider)</a></li>
+                  <li><a href="../home-shop-featured-slider.html">Featured Products Slider (Master Slider)</a></li>
+                  <li><a href="../home-shop-categories-grid.html">Categories Grid</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="has-submenu"><a href="#">Portfolio</a>
+            <ul class="submenu">
+              <li><a href="../portfolio-list.html">Portfolio List Layout</a></li>
+              <li><a href="../portfolio-categorized.html">Portfolio Categorized</a></li>
+              <li class="has-sub-submenu">
+                <a href="#">Portfolio Grid</a>
+                <ul class="sub-submenu">
+                  <li><a href="../portfolio-grid-1col.html">Portfolio Grid 1 Column</a></li>
+                  <li><a href="../portfolio-grid-2col.html">Portfolio Grid 2 Columns</a></li>
+                  <li><a href="../portfolio-grid-3col.html">Portfolio Grid 3 Columns</a></li>
+                  <li><a href="../portfolio-grid-4col.html">Portfolio Grid 4 Columns</a></li>
+                </ul>
+              </li>
+              <li><a href="../portfolio-grid-masonry.html">Portfolio Masonry Grid</a></li>
+              <li class="has-sub-submenu">
+                <a href="#">Portfolio Single Project</a>
+                <ul class="sub-submenu">
+                  <li><a href="../portfolio-single-v1.html">Portfolio Single Project v.1</a></li>
+                  <li><a href="../portfolio-single-v2.html">Portfolio Single Project v.2</a></li>
+                </ul>
+              </li>
+              <li class="has-sub-submenu">
+                <a href="#">Portfolio Grid No Gap Boxed</a>
+                <ul class="sub-submenu">
+                  <li><a href="../portfolio-nogap-boxed-mixed.html">Portfolio Mixed Columns</a></li>
+                  <li><a href="../portfolio-nogap-boxed-1col.html">Portfolio 1 Column</a></li>
+                  <li><a href="../portfolio-nogap-boxed-2col.html">Portfolio 2 Columns</a></li>
+                  <li><a href="../portfolio-nogap-boxed-3col.html">Portfolio 3 Columns</a></li>
+                  <li><a href="../portfolio-nogap-boxed-4col.html">Portfolio 4 Columns</a></li>
+                </ul>
+              </li>
+              <li class="has-sub-submenu">
+                <a href="#">Portfolio Grid No Gap Full Width</a>
+                <ul class="sub-submenu">
+                  <li><a href="../portfolio-nogap-fw-mixed.html">Portfolio Mixed Columns</a></li>
+                  <li><a href="../portfolio-nogap-fw-1col.html">Portfolio 1 Column</a></li>
+                  <li><a href="../portfolio-nogap-fw-2col.html">Portfolio 2 Columns</a></li>
+                  <li><a href="../portfolio-nogap-fw-3col.html">Portfolio 3 Columns</a></li>
+                  <li><a href="../portfolio-nogap-fw-4col.html">Portfolio 4 Columns</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="has-submenu"><a href="#">Blog</a>
+            <ul class="submenu">
+              <li class="has-sub-submenu">
+                <a href="#">Blog Grid Full Width</a>
+                <ul class="sub-submenu">
+                  <li><a href="../blog-grid-fullwidth-2col.html">Blog Grid 2 Columns</a></li>
+                  <li><a href="../blog-grid-fullwidth-3col.html">Blog Grid 3 Columns</a></li>
+                  <li><a href="../blog-grid-fullwidth-4col.html">Blog Grid 4 Columns</a></li>
+                </ul>
+              </li>
+              <li class="has-sub-submenu">
+                <a href="#">Blog Grid with Sidebar</a>
+                <ul class="sub-submenu">
+                  <li><a href="../blog-grid-sidebar-2col.html">Blog Grid 2 Columns</a></li>
+                  <li><a href="../blog-grid-sidebar-3col.html">Blog Grid 3 Columns</a></li>
+                </ul>
+              </li>
+              <li><a href="../blog-grid-masonry.html">Blog Grid Masonry</a></li>
+              <li class="has-sub-submenu">
+                <a href="#">Blog List</a>
+                <ul class="sub-submenu">
+                  <li><a href="../blog-list-fullwidth.html">Blog List Full Width</a></li>
+                  <li><a href="../blog-list-sidebar.html">Blog List with Sidebar</a></li>
+                </ul>
+              </li>
+              <li><a href="../blog-single.html">Blog Single Post</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu"><a href="#">Shop</a>
+            <ul class="submenu">
+              <li class="has-sub-submenu">
+                <a href="#">Shop Grid Full Width</a>
+                <ul class="sub-submenu">
+                  <li><a href="../shop-grid-fullwidth-2col.html">Shop Grid 2 Columns</a></li>
+                  <li><a href="../shop-grid-fullwidth-3col.html">Shop Grid 3 Columns</a></li>
+                  <li><a href="../shop-grid-fullwidth-4col.html">Shop Grid 4 Columns</a></li>
+                </ul>
+              </li>
+              <li class="has-sub-submenu">
+                <a href="#">Shop Grid with Sidebar</a>
+                <ul class="sub-submenu">
+                  <li><a href="../shop-grid-sidebar-2col.html">Shop Grid 2 Columns</a></li>
+                  <li><a href="../shop-grid-sidebar-3col.html">Shop Grid 3 Columns</a></li>
+                </ul>
+              </li>
+              <li class="has-sub-submenu">
+                <a href="#">Shop List</a>
+                <ul class="sub-submenu">
+                  <li><a href="../shop-list-fullwidth.html">Shop List Full Width</a></li>
+                  <li><a href="../shop-list-sidebar.html">Shop List with Sidebar</a></li>
+                </ul>
+              </li>
+              <li class="has-sub-submenu">
+                <a href="#">Single Product</a>
+                <ul class="sub-submenu">
+                  <li><a href="../shop-single-v1.html">Single Product v.1</a></li>
+                  <li><a href="../shop-single-v2.html">Single Product v.2</a></li>
+                </ul>
+              </li>
+              <li><a href="../shopping-cart.html">Shopping Cart</a></li>
+              <li><a href="../checkout.html">Checkout</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu"><a href="#">Pages</a>
+            <ul class="submenu">
+              <li><a href="../parallax-cta.html">Parallax CTA</a></li>
+              <li><a href="../faq-support.html">FAQ / Support</a></li>
+              <li><a href="../about.html">About Us</a></li>
+              <li><a href="../services.html">Services</a></li>
+              <li><a href="../clients.html">Clients</a></li>
+              <li><a href="../team.html">Team</a></li>
+              <li><a href="../contacts.html">Contacts</a></li>
+              <li><a href="../login.html">Log In / Sign Up</a></li>
+              <li><a href="../under-construction.html">Under Construction</a></li>
+              <li><a href="../404.html">404 Page</a></li>
+              <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="../search-results.html">Search Results</a></li>
+              <li><a href="../sitemap.html">Sitemap</a></li>
+            </ul>
+          </li>
+          <li class="has-mega-menu active"><a href="#">Elements</a>
+            <div class="mega-menu">
+              <!-- Possible layout options ".column-2", ".column-3", ".column-4" -->
+              <ul class="column-4">
+                <li class="submenu-heading">A - B</li>
+                <li><a href="accordions.html">Accordions &amp; Panels</a></li>
+                <li><a href="alerts.html">Alerts</a></li>
+                <li><a href="animations.html">Animations</a></li>
+                <li><a href="block-titles.html">Block Titles</a></li>
+                <li><a href="buttons.html">Buttons</a></li>
+                <li class="submenu-heading">C - D</li>
+                <li><a href="charts.html">Charts</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="cta-and-banners.html">Call To Action &amp; Banners</a></li>
+                <li><a href="countdowns.html">Countdowns</a></li>
+                <li><a href="counters.html">Counters</a></li>
+                <li><a href="dividers.html">Dividers</a></li>
+              </ul>
+              <ul class="column-4">
+                <li class="submenu-heading">F - G</li>
+                <li><a href="fonts.html">Fonts</a></li>
+                <li><a href="footers.html">Footers</a></li>
+                <li><a href="forms.html">Forms</a></li>
+                <li><a href="gradients-and-colors.html">Gradients &amp; Solid Colors</a></li>
+                <li><a href="grids.html">Grids</a></li>
+                <li class="submenu-heading">H - I</li>
+                <li><a href="headers.html">Headers</a></li>
+                <li><a href="icons.html">Icons</a></li>
+                <li><a href="content-boxes.html">Icon Content Boxes</a></li>
+                <li><a href="info-notifications.html">Info Notifications</a></li>
+                <li><a href="images.html">Images &amp; Thumbnails</a></li>
+                <li><a href="comparison-slider.html">Image Comparison Slider</a></li>
+              </ul>
+              <ul class="column-4">
+                <li class="submenu-heading">L - M</li>
+                <li><a href="labels-and-badges.html">Labels &amp; Badges</a></li>
+                <li><a href="list-groups.html">List Groups</a></li>
+                <li><a href="maps.html">Maps</a></li>
+                <li><a href="master-slider.html">Master Slider (Premium)</a></li>
+                <li><a href="morphing-devices.html">Morphing Devices</a></li>
+                <li class="submenu-heading">P - R - S</li>
+                <li><a href="page-titles.html">Page Titles &amp; Breadcrumbs</a></li>
+                <li><a href="pricing-plans.html">Pricing Plans</a></li>
+                <li><a href="progress-bars.html">Progress Bars</a></li>
+                <li><a href="ratings.html">Rating System</a></li>
+                <li><a href="sliders-and-carousels.html">Sliders &amp; Carousels</a></li>
+                <li><a href="sliders-and-switches.html">Sliders &amp; Switches</a></li>
+              </ul>
+              <ul class="column-4">
+                <li class="submenu-heading">T</li>
+                <li><a href="tabs.html">Tabs</a></li>
+                <li><a href="tables.html">Tables</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li class="active"><a href="text-columns.html">Text Columns</a></li>
+                <li><a href="tiles.html">Tiles</a></li>
+                <li><a href="timelines.html">Timelines</a></li>
+                <li><a href="tooltips-and-popovers.html">Tooltips &amp; Popovers</a></li>
+                <li><a href="typography.html">Typography</a></li>
+                <li class="submenu-heading">V - W</li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="widgets.html">Widgets</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav><!-- Site Navigation End -->
+
+      <!-- Toolbar -->
+      <nav class="navbar-tools">
+        <ul>
+
+          <!-- Sign Up -->
+          <li class="signup-btn"><a href="#" data-toggle="modal" data-target="#login-modal" data-modal-form="sign-up">Sign Up</a></li>
+
+          <!-- Login -->
+          <li class="login-btn"><a href="#" data-toggle="modal" data-target="#login-modal" data-modal-form="sign-in" class="text-success">Login</a></li>
+
+          <!-- Search -->
+          <li class="navbar-search cbutton cbutton--effect">
+            <a href="#" data-toggle="modal" data-target="#search-modal" class="pe-7s-search"></a>
+          </li>
+
+          <!-- Cart Button -->
+          <li class="cart-btn cbutton cbutton--effect">
+            <a href="../shopping-cart.html">
+              <i class="pe-7s-cart">
+                <span class="count">3</span>
+              </i>
+            </a>
+            <!-- Cart Dropdown -->
+            <div class="dropdown">
+              <div class="cart-dropdown">
+                <div class="item">
+                  <a class="thumb" href="../shop-single-v1.html"><img src="../img/shop/cart/dropdown/th01.png" alt="Thumbnail"></a>
+                  <div class="title-description">
+                    <a href="../shop-single-v1.html">Canon Mreal</a>
+                    <p>Lorem ipsum dolor sit amet consectetur</p>
+                  </div>
+                  <div class="price-quantity">
+                    <span class="delete">&times;</span>
+                    <div class="price"><span>1 x </span>$865</div>
+                  </div>
+                </div>
+                <div class="item">
+                  <a class="thumb" href="../shop-single-v1.html"><img src="../img/shop/cart/dropdown/th02.png" alt="Thumbnail"></a>
+                  <div class="title-description">
+                    <a href="../shop-single-v1.html">Cotton Handbag</a>
+                    <p>Lorem ipsum dolor sit amet consectetur</p>
+                  </div>
+                  <div class="price-quantity">
+                    <span class="delete">&times;</span>
+                    <div class="price"><span>1 x </span>$230</div>
+                  </div>
+                </div>
+                <div class="item">
+                  <a class="thumb" href="../shop-single-v1.html"><img src="../img/shop/cart/dropdown/th03.png" alt="Thumbnail"></a>
+                  <div class="title-description">
+                    <a href="../shop-single-v1.html">Nest Thermostat</a>
+                    <p>Lorem ipsum dolor sit amet consectetur</p>
+                  </div>
+                  <div class="price-quantity">
+                    <span class="delete">&times;</span>
+                    <div class="price"><span>1 x </span>$540</div>
+                  </div>
+                </div>
+                <div class="total">
+                  Cart subtotal:
+                  <span>$1635</span>
+                </div>
+              </div>
+              <div class="dropdown-footer">
+                <div class="column">
+                  <a href="../shopping-cart.html" class="btn btn-ghost btn-primary btn-block">View Cart</a>
+                </div>
+                <div class="column">
+                  <span class="text-muted">or</span>
+                </div>
+                <div class="column">
+                  <a href="../checkout.html" class="btn btn-success btn-block">Checkout</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Navigation Toggle -->
+          <li class="nav-toggle cbutton cbutton--effect">
+            <a href="#" class="flaticon-list26" data-nav-target="#site-menu"></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header><!-- Navbar End -->
+
+  <!-- Container -->
+  <section class="container space-bottom-2x">
+
+    <!-- Page Title -->
+    <div class="page-title space-top">
+      <div class="ph-table">
+        <div class="ph-td">
+          <h1>Text Columns</h1>
+        </div>
+        <div class="ph-td text-right">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">Elements</a></li>
+            <li>Text Columns</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- Page Title End -->
+
+    <!-- 1/4 -->
+    <div class="row space-bottom">
+      <div class="col-sm-3">
+        <h3>1/4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum eveniet, alias consequatur et, volup omni dolorem ipsa dolor vero culpa fugit nisi provident impedit quas.</p>
+      </div>
+      <div class="col-sm-3">
+        <h3>1/4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum eveniet, alias consequatur et, volup omni dolorem ipsa dolor vero culpa fugit nisi provident impedit quas.</p>
+      </div>
+      <div class="col-sm-3">
+        <h3>1/4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum eveniet, alias consequatur et, volup omni dolorem ipsa dolor vero culpa fugit nisi provident impedit quas.</p>
+      </div>
+      <div class="col-sm-3">
+        <h3>1/4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum eveniet, alias consequatur et, volup omni dolorem ipsa dolor vero culpa fugit nisi provident impedit quas.</p>
+      </div>
+    </div>
+
+    <!-- 1/3 -->
+    <div class="row space-bottom">
+      <div class="col-sm-4">
+        <h3>1/3</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia.</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>1/3</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia.</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>1/3</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia.</p>
+      </div>
+    </div>
+
+    <!-- 1/2 -->
+    <div class="row space-bottom">
+      <div class="col-sm-6">
+        <h3>1/2</h3>
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui.</p>
+      </div>
+      <div class="col-sm-6">
+        <h3>1/2</h3>
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui.</p>
+      </div>
+    </div>
+
+    <!-- 1/3 - 2/3 -->
+    <div class="row space-bottom">
+      <div class="col-sm-4">
+        <h3>1/3</h3>
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid.</p>
+      </div>
+      <div class="col-sm-8">
+        <h3>2/3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+    </div>
+
+    <!-- 2/3 - 1/3 -->
+    <div class="row space-bottom">
+      <div class="col-sm-8">
+        <h3>2/3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>1/3</h3>
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid.</p>
+      </div>
+    </div>
+
+    <!-- 1/4 - 3/4 -->
+    <div class="row space-bottom">
+      <div class="col-sm-3">
+        <h3>1/4</h3>
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquame quaerat voluptatem enim muronamat.</p>
+      </div>
+      <div class="col-sm-9">
+        <h3>3/4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo minima veniam, quis nostrum ullam.</p>
+      </div>
+    </div>
+
+    <!-- 3/4 - 1/4 -->
+    <div class="row space-bottom">
+      <div class="col-sm-9">
+        <h3>3/4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo minima veniam, quis nostrum ullam.</p>
+      </div>
+      <div class="col-sm-3">
+        <h3>1/4</h3>
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquame quaerat voluptatem enim muronamat.</p>
+      </div>
+    </div>
+  </section><!-- Container End -->
+
+
+  <!-- Scroll to Top Button -->
+  <!-- Use 'data-scroll-top' attribute to set value at which point the scroll to top button appears. -->
+  <a href="#" class="btn btn-icon btn-primary scroll-to-top-btn scroll-up" data-scroll-top="600">
+    <i class="pe-7s-angle-up"></i>
+  </a>
+
+  <!-- Footer -->
+  <!-- To switch to dark version simply remove add ".footer-dark" -->
+  <footer class="footer footer-dark">
+    <div class="container">
+      <div class="widget widget-inline">
+        <div class="column-outer">
+          <div class="inner">
+            <div class="column-inner">
+              <h3 class="widget-title">Subscribe</h3>
+            </div>
+            <div class="column-inner">
+              <p class="size-sm">
+                Feel free to subscribe to our newspaper. We do not tolerate spam.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column-outer">
+          <!-- MailChimp Subscription -->
+          <form action="//8guild.us3.list-manage.com/subscribe/post?u=168a366a98d3248fbc35c0b67&amp;id=916472e71b" method="post" id="subscr-widget-form" class="inner" target="_blank" novalidate autocomplete="off">
+            <div class="column-inner">
+              <div class="form-input form-input-light">
+                <input type="email" name="EMAIL" id="sw_email" required>
+                <label for="sw_email">Email</label>
+                <span class="error-label"></span>
+                <span class="valid-label"></span>
+              </div>
+            </div>
+            <div class="column-inner">
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;"><input type="text" name="b_168a366a98d3248fbc35c0b67_916472e71b" tabindex="-1" value=""></div>
+
+              <button type="submit" class="btn btn-ghost btn-light btn-sm btn-block">Subscribe</button>
+              </div>
+          </form>
+        </div>
+      </div>
+      <div class="widget widget-inline">
+        <div class="column-outer">
+          <div class="inner">
+            <div class="column-inner" style="width: 150px;">
+              <!-- Logo icon width can be adjusted trough the variable '@footer-logo-img-max-width' in less/variables.less -->
+              <a href="../index.html" class="logo footer-logo">
+                <img src="../img/logo/logo-007aff.png" alt="iTheme">
+                <span>iTheme</span>
+              </a>
+            </div>
+            <div class="column-inner">
+              <p class="size-sm">Advanced multipurpose theme with lots of components, color skins and layout options that gives you endless possibilities.</p>
+            </div>
+          </div>
+        </div>
+        <div class="column-outer">
+          <div class="inner">
+            <div class="column-inner">
+              <div class="social-buttons">
+                <a href="#" class="sb-twitter cbutton cbutton--effect"><i class="bi-twitter"></i></a>
+                <a href="#" class="sb-google-plus cbutton cbutton--effect"><i class="bi-gplus"></i></a>
+                <a href="#" class="sb-facebook cbutton cbutton--effect"><i class="bi-facebook"></i></a>
+              </div>
+            </div>
+            <div class="column-inner text-right">
+              <p class="copyright">&copy; 2015 <a href="http://8guild.com/" target="_blank">8 Guild</a>. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- JavaScript (jQuery) libraries and scripts -->
+  <script src="../js/libs/jquery-1.11.2.min.js"></script>
+  <script src="../js/libs/jquery.easing.min.js"></script>  
+  <script src="../js/plugins/bootstrap.min.js"></script>
+  <script src="../js/plugins/smoothscroll.js"></script>
+  <script src="../js/plugins/velocity.min.js"></script>
+  <script src="../js/plugins/form-plugins.js"></script>
+  <script src="../js/plugins/waypoints.min.js"></script>
+  <script src="../js/plugins/icon-click-effect.js"></script>
+  <script src="../js/scripts.js"></script>
+
+</body><!-- Body End -->
+
+</html>

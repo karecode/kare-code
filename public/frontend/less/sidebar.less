@@ -1,0 +1,41 @@
+//
+// Sidebar
+// --------------------------------------------------
+.sidebar {
+	width: 100%;
+	max-width: @sidebar-max-width;
+
+	// Right Sidebar
+	&.sidebar-right {
+		border-left: 1px solid @sidebar-divider-color;
+		padding-left: 25px;
+	}
+
+	// Left Sidebar
+	&.sidebar-left {
+		border-right: 1px solid @sidebar-divider-color;
+		padding-right: 25px;
+	}
+	
+	// Slider inside sidebar
+	@media @desktop {
+		.slider-ui,
+		.slider.slider-horizontal {
+			width: (@slider-width - 25px);
+		}
+	}
+
+	// Sidebar Stack
+	@media screen and (max-width: @sidebar-stack-screen-width) {
+		&.sidebar-left {
+			border-right: none;
+			padding-right: 0;
+			border-left: 1px solid @sidebar-divider-color;
+			padding-left: 25px;
+		}
+		.slider-ui,
+		.slider.slider-horizontal {
+			width: @slider-width;
+		}
+	}
+}

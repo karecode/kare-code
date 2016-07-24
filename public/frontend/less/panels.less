@@ -1,0 +1,208 @@
+//
+// Panels / Accordions
+// dependency: bootstrap/panels.less
+// --------------------------------------------------
+
+// Base class
+.panel {
+  background-color: @panel-bg;
+  border: none;
+  padding-left: 24px;
+  .box-shadow(none);
+
+  // Panel heading
+  .panel-heading {
+    position: relative;
+    font-size: @panel-heading-font-size;
+    padding: 14px 24px 15px 0;
+    overflow: hidden;
+    .border-top-radius(none);
+    h1, h2, h3, h4, h5, h6 {
+      font-size: @panel-heading-font-size;
+      font-weight: normal;
+      margin: 0;
+    }
+    &:before {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      background-color: @panel-heading-divider-color;
+    }
+  }
+
+  // Panel body
+  .panel-body {
+    padding: 12px 24px 25px 0;
+  }
+
+  // Ghost version
+  &.panel-ghost {
+    background-color: transparent;
+    padding-left: 0;
+  }
+
+  // With Badge
+  &.panel-with-badge {
+    .panel-heading {
+      padding-left: 42px;
+      &:before { left: 42px; }
+    }
+    .panel-body { padding-left: 42px; }
+  }
+  .badge {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: 0;   
+  }
+}
+
+// Collapsable panels (aka, Accordion)
+//
+.panel-group {
+  .panel {
+    padding: 0;
+    + .panel { margin-top: 0px; }
+    .panel-heading + .panel-collapse > .panel-body {
+      border: none;
+    }
+    .panel-body { padding-left: 24px; }
+    .panel-heading {
+      border: none;
+      padding: 0;
+      background-color: transparent;
+      .transition(background-color, .3s);
+      &:before { display: none; }
+      a {
+        display: block;
+        position: relative;
+        color: @panel-link-active-color;
+        background-color: transparent;
+        padding: 13px 46px 14px 24px;
+        overflow: hidden;
+        .transition(all, .3s);
+        &:before {
+          display: block;
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 1px;
+          left: 24px;
+          bottom: 0;
+          .transition(background-color, .3s);
+        }
+        &:after {
+          display: block;
+          position: absolute;
+          font-family: 'Pe-icon-7-stroke';
+          content: "\e682";
+          line-height: 30px;
+          font-size: 30px;
+          right: 15px;
+          top: 9px;
+          color: @panel-link-active-color;
+          .transition(all, .25s);
+        }
+        &:hover, &:focus { opacity: 1; }
+        &.collapsed {
+          color: @panel-link-color;
+          border-bottom-color: @panel-heading-divider-color;
+          &:before {
+            background-color: @panel-heading-divider-color;
+          }
+          &:after {
+            .rotate(180deg);
+          }
+          &:hover { background-color: @panel-link-hover-bg; }
+        }
+      }
+    }
+    &:last-child .panel-heading a:before { display: none; }
+
+    // With Badge
+    &.panel-with-badge {
+      .panel-heading {
+        a {
+          padding-left: 66px;
+           &:before { left: 66px; }
+        }
+        .badge { left: 24px; }
+      }
+      .panel-body { padding-left: 66px; }
+    }
+    &.panel-ghost {
+      .panel-heading a:hover {
+        background-color: @panel-alt-link-hover-bg;
+      }
+    }
+  }
+}
+
+// When Alt Body
+.body-alt {
+  .panel { background-color: @panel-bg-alt; }
+  .panel-group .panel {
+    .panel-heading a.collapsed:hover {
+      background-color: @panel-alt-link-hover-bg;
+    }
+  }
+  .panel.panel-ghost { background-color: transparent; }
+  .panel-group .panel.panel-ghost {
+    .panel-heading a.collapsed:hover {
+      background-color: @panel-link-hover-bg;
+    }
+  }
+}
+
+// Light Skin
+.text-light {
+  .panel,
+  &.panel {
+    background-color: transparent;
+    border: 1px solid #fff;
+    .panel-heading a:hover {
+      background-color: transparent;
+    }
+
+    &.panel-ghost {
+      border: none;
+      .panel-heading a:hover {
+        background-color: transparent;
+      }
+    }
+    .panel-heading {
+      a {
+        color: #fff;
+        .backface-visibility(hidden);
+        &.collapsed {
+          color: #fff;
+          opacity: .65;
+          &:hover {
+            background-color: rgba(255,255,255,.16) !important;
+          }
+        }
+        &:after { color: #fff; }
+      }
+    }
+    a, a:hover, a:focus {
+      color: #fff;
+    }
+  }
+  .panel-group,
+  &.panel-group {
+    .panel {
+      border: none;
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+      &:first-child { border-top: 1px solid #fff; }
+      &:last-child { border-bottom: 1px solid #fff; }
+
+      &.panel-ghost { border: none; }
+    }
+  }
+}

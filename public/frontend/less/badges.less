@@ -1,0 +1,90 @@
+//
+// Badges
+// --------------------------------------------------
+
+.badge {
+  vertical-align: middle;
+  min-width: @badge-line-height;
+  font-size: @badge-font-size;
+  font-weight: normal;
+  border-radius: @border-radius-base;
+  line-height: @badge-line-height;
+  padding: 0 10px;
+  white-space: nowrap;
+  background-color: @badge-bg-color;
+  &:empty { display: inline-block; }
+  
+  // Just icon badges
+  &[class^="flaticon-"], &[class*=" flaticon-"],
+  &[class^="pe-7s-"], &[class*=" pe-7s-"],
+  &[class^="bi-"]:before, &[class*=" bi-"]:before { font-size: 18px; }
+  &[class^="pe-7s-"], &[class*=" pe-7s-"],
+  &[class^="bi-"], &[class*=" bi-"] { padding: 0 7px; }
+  &[class^="flaticon-"], &[class*=" flaticon-"] { padding: 0 6px; }
+  
+  i {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -2px;
+    margin-top: -2px;
+    line-height: 1;
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  // Circle Badge
+  &[class^="flaticon-"], &[class*=" flaticon-"],
+  &[class^="pe-7s-"], &[class*=" pe-7s-"],
+  &[class^="bi-"]:before, &[class*=" bi-"] {
+    &.badge-circle { border-radius: 50%; }
+  }
+  &.badge-circle { border-radius: @badge-circle-border-radius; }
+  
+  // Color variants
+  &.badge-default { background-color: @badge-default-bg-color; }
+  &.badge-primary { background-color: @badge-primary-bg-color; }
+  &.badge-success { background-color: @badge-success-bg-color; }
+  &.badge-info { background-color: @badge-info-bg-color; }
+  &.badge-warning { background-color: @badge-warning-bg-color; }
+  &.badge-danger { background-color: @badge-danger-bg-color; }
+}
+
+// Within Buttons
+.btn {
+  .badge {
+    position: absolute;
+    top: -11px;
+    right: -11px;
+    min-width: 24px;
+    color: @badge-color;
+    font-size: @font-size-small;
+    background-color: @badge-bg-color;
+    border-radius: 2px;
+    line-height: 24px;
+    padding: 0 6px;
+
+    // Just icon badges
+    &[class^="flaticon-"], &[class*=" flaticon-"],
+    &[class^="pe-7s-"], &[class*=" pe-7s-"],
+    &[class^="bi-"]:before, &[class*=" bi-"]:before { font-size: 16px; }
+    &[class^="pe-7s-"], &[class*=" pe-7s-"],
+    &[class^="bi-"], &[class*=" bi-"] { padding: 0 5px; }
+    &[class^="flaticon-"], &[class*=" flaticon-"] { padding: 0 4px; }
+
+    // Circle Badge
+    &[class^="flaticon-"], &[class*=" flaticon-"],
+    &[class^="pe-7s-"], &[class*=" pe-7s-"],
+    &[class^="bi-"]:before, &[class*=" bi-"] {
+      &.badge-circle { border-radius: 50%; }
+    }
+    &.badge-circle { border-radius: @badge-circle-border-radius; }
+
+    // Color variants
+    &.badge-default { background-color: @badge-default-bg-color; }
+    &.badge-primary { background-color: @badge-primary-bg-color; }
+    &.badge-success { background-color: @badge-success-bg-color; }
+    &.badge-info { background-color: @badge-info-bg-color; }
+    &.badge-warning { background-color: @badge-warning-bg-color; }
+    &.badge-danger { background-color: @badge-danger-bg-color; }
+  }
+}

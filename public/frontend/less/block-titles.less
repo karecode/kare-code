@@ -1,0 +1,132 @@
+//
+// Block Titles
+// --------------------------------------------------
+
+.block-title {
+	margin-bottom: (@line-height-computed * 1.5);
+	h2 { margin-bottom: floor(@line-height-computed / 1.8); }
+	small {
+		display: block;
+		font-size: @font-size-base; 
+		color: @headings-small-color;
+		line-height: @line-height-base;
+		max-width: 550px;
+		margin: 0 0 20px 0;
+	}
+	&.text-center {
+		small {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	&.text-right {
+		small {
+			max-width: 100%;
+		}
+	}
+	hr { margin: 0 0 17px 0; }
+	&.line-through {
+		.main-title {
+			position: relative;
+			margin-bottom: floor(@line-height-computed / 1.8);
+			hr {
+				display: block;
+				width: 100%;
+				position: absolute;
+				z-index: 1;
+				top: 52%;
+				left: 0;
+			}
+		}
+		h1, h2, h3 {
+			position: relative;
+			display: inline-block;
+			z-index: 5;
+			margin-bottom: 0;
+			padding-right: 20px;
+			background-color: @body-bg;
+		}
+		&.text-center,
+		&.text-right {
+			h1, h2, h3 {
+				padding-left: 20px;
+			}
+		}
+		&.text-right {
+			h1, h2, h3 {
+				padding-right: 0;
+			}
+		}
+	}
+}
+// When alt body
+.body-alt .block-title.line-through {
+	h1, h2, h3 {
+		background-color: @body-bg-alt;
+	}
+}
+@media @tablet-port {
+	.block-title {
+		h1 { font-size: @font-size-h2; }
+		h2 { font-size: (@font-size-h2 * 0.8); }
+	}
+}
+
+// Badge Variant
+.block-title-with-badge {
+	width: 100%;
+	margin-bottom: (@line-height-computed * 1.5);
+	hr { margin: 0; }
+	.block-title-badge {
+		font-size: @block-title-badge-font-size;
+		color: @block-title-badge-font-color;
+		margin-bottom: 30px;
+
+		.badge-icon {
+			display: inline-block;
+			vertical-align: middle;
+			width: 36px;
+			height: 70px;
+			color: #fff;
+			text-align: center;
+			padding-top: 21px;
+			margin-right: 10px;
+			line-height: 1;
+			background-color: @brand-default;
+
+			i:before,
+			i:before { font-size: 27px; }
+		}
+		&.solid-default .badge-icon {
+			background: none;
+			background-color: @brand-default;
+		}
+		&.solid-primary .badge-icon {
+			background: none;
+			background-color: @brand-primary;
+		}
+		&.solid-success .badge-icon {
+			background: none;
+			background-color: @brand-success;
+		}
+		&.solid-info .badge-icon {
+			background: none;
+			background-color: @brand-info;
+		}
+		&.solid-warning .badge-icon {
+			background: none;
+			background-color: @brand-warning;
+		}
+		&.solid-danger .badge-icon {
+			background: none;
+			background-color: @brand-danger;
+		}
+		&.badge-reverse {
+			text-align: right;
+			.badge-icon {
+				margin-right: 0;
+				margin-left: 15px;
+			}
+		}
+	}
+}

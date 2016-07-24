@@ -1,0 +1,571 @@
+//
+// Icons (Font icons) Styles
+// --------------------------------------------------
+
+// Special Click on Icon Effect
+// --------------------------------------------------
+.cbutton {
+	position: relative;
+	&::after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -19px 0 0 -19px;
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		content: '';
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+.cbutton--effect::after {
+	.rgbaBackground(@brand-primary, .13);
+}
+.cbutton--effect.cbutton--click::after {
+	-webkit-animation: anim-effect 0.35s forwards;
+	animation: anim-effect 0.35s forwards;
+}
+
+@-webkit-keyframes anim-effect {
+	0% {
+		-webkit-transform: scale3d(0.3, 0.3, 1);
+		transform: scale3d(0.3, 0.3, 1);
+	}
+	25%, 50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale3d(1.2, 1.2, 1);
+		transform: scale3d(1.2, 1.2, 1);
+	}
+}
+
+@keyframes anim-effect {
+	0% {
+		-webkit-transform: scale3d(0.3, 0.3, 1);
+		transform: scale3d(0.3, 0.3, 1);
+	}
+	25%, 50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale3d(1.2, 1.2, 1);
+		transform: scale3d(1.2, 1.2, 1);
+	}
+}
+
+
+// Standard Icons
+// --------------------------------------------------
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: @icon-size;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	&[class^="flaticon-"], &[class*=" flaticon-"] {
+		font-size: floor(@icon-size * 0.95);
+	}
+
+	// 2x size icons
+	&.icon-2x {
+		font-size: @icon-size-2x;
+		&[class^="flaticon-"], &[class*=" flaticon-"] {
+			font-size: floor(@icon-size-2x * 0.95);
+		}
+	}
+
+	// Solid Color variations
+	&.icon-default { color: @brand-default; }
+	&.icon-primary { color: @brand-primary; }
+	&.icon-success { color: @brand-success; }
+	&.icon-info { color: @brand-info; }
+	&.icon-warning { color: @brand-warning; }
+	&.icon-danger { color: @brand-danger; }
+}
+
+
+// Rounded / Square / Circle Icons
+// --------------------------------------------------
+.icon-rounded,
+.icon-square,
+.icon-circle {
+	width: @icon-size;
+	height: @icon-size;
+	font-size: floor(@icon-size / 1.5);
+	text-align: center;
+	line-height: @icon-size;
+	color: #fff !important;
+	background-color: @brand-default;
+	&[class^="flaticon-"], &[class*=" flaticon-"] {
+		font-size: floor(@icon-size / 1.5);
+	}
+
+	// Icons Backgrounds variations
+	&.icon-default { background-color: @brand-default; }
+	&.icon-primary { background-color: @brand-primary; }
+	&.icon-success { background-color: @brand-success; }
+	&.icon-info { background-color: @brand-info; }
+	&.icon-warning { background-color: @brand-warning; }
+	&.icon-danger { background-color: @brand-danger; }
+}
+
+.icon-rounded { border-radius: @border-radius-base; }
+.icon-square { border-radius: 0; }
+.icon-circle { border-radius: 50%; }
+
+
+// Ghost version
+// --------------------------------------------------
+.icon-ghost {
+	color: @brand-default !important;
+	background-color: transparent !important;
+	border: 1px solid @brand-default;
+
+	// Icons Color variations
+	&.icon-default {
+		color: @brand-default !important;
+		border-color: @brand-default;  
+	}
+	&.icon-primary {
+		color: @brand-primary !important;
+		border-color: @brand-primary;
+	}
+	&.icon-success {
+		color: @brand-success !important;
+		border-color: @brand-success;
+	}
+	&.icon-info {
+		color: @brand-info !important;
+		border-color: @brand-info;
+	}
+	&.icon-warning {
+		color: @brand-warning !important;
+		border-color: @brand-warning;
+	}
+	&.icon-danger {
+		color: @brand-danger !important;
+		border-color: @brand-danger;
+	}
+}
+
+// Icons positioning
+.text-left .icon {
+	margin-right: 11px;
+}
+.text-center .icon {
+	margin-left: 6px;
+	margin-right: 6px;
+}
+.text-right .icon {
+	margin-left: 11px;
+}
+.text-left.icon,
+.align-left.icon { margin-right: 11px !important; }
+.align-center.icon,
+.text-center.icon {
+	margin-left: 6px !important;
+	margin-right: 6px !important;
+}
+.text-right.icon,
+.align-right.icon { margin-left: 11px !important; }
+
+
+// Social Links / Buttons
+// --------------------------------------------------
+.social-buttons {
+	display: inline-block;
+	vertical-align: middle;
+	a {
+		display: inline-block;
+		text-decoration: none;
+		margin: 5px 25px 10px 0;
+		opacity: 1;
+		.transition(all, 0.25s);
+		.backface-visibility(hidden);
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		// :hover state
+		&:hover {	opacity: .6; }
+		&.cbutton--click,
+		&:focus { outline: none; }
+	}
+
+	// Double size
+	&.social-buttons-2x a {
+		font-size: floor(@font-size-base * 1.9);
+		margin: 5px 48px 12px 0;
+	}
+}
+.text-center.social-buttons,
+.text-center .social-buttons {
+	display: block;
+	text-align: center;
+	a { margin: 5px 12px 10px 12px; }
+}
+.text-center.social-buttons-2x,
+.text-center .social-buttons-2x {
+	a { margin: 5px 24px 12px 24px; }
+}
+.text-right.social-buttons,
+.text-right .social-buttons {
+	display: block;
+	text-align: right;
+	a { margin: 5px 0 10px 25px; }
+}
+.text-right.social-buttons-2x,
+.text-right .social-buttons-2x {
+	a { margin: 5px 0 12px 48px; }
+}
+
+/* Behance */
+.sb-behance {
+	color: #1769ff;
+	&:hover, &:focus { color: #1769ff; }
+	&.cbutton--effect::after { .rgbaBackground(#1769ff, .12); }
+}
+/* Bitbucket */
+.sb-bitbucket {
+	color: #205081;
+	&:hover, &:focus { color: #205081; }
+	&.cbutton--effect::after { .rgbaBackground(#205081, .12); }
+}
+/* CodePen */
+.sb-codepen {
+	color: #76daff;
+	&:hover, &:focus { color: #76daff; }
+	&.cbutton--effect::after { .rgbaBackground(#76daff, .12); }
+}
+/* DeviantArt */
+.sb-deviantart {
+	color: #4e6252;
+	&:hover, &:focus { color: #4e6252; }
+	&.cbutton--effect::after { .rgbaBackground(#4e6252, .12); }
+}
+/* Digg */
+.sb-digg {
+	color: #000000;
+	&:hover, &:focus { color: #000000; }
+	&.cbutton--effect::after { .rgbaBackground(#000000, .12); }
+}
+/* Dribbble */
+.sb-dribbble {
+	color: #ea4c89;
+	&:hover, &:focus { color: #ea4c89; }
+	&.cbutton--effect::after { .rgbaBackground(#ea4c89, .12); }
+}
+/* Dropbox */
+.sb-dropbox {
+	color: #007ee5;
+	&:hover, &:focus { color: #007ee5; }
+	&.cbutton--effect::after { .rgbaBackground(#007ee5, .12); }
+}
+/* Facebook */
+.sb-facebook {
+	color: #007aff;
+	&:hover, &:focus { color: #007aff; }
+	&.cbutton--effect::after { .rgbaBackground(#007aff, .12); }
+}
+/* Flickr */
+.sb-flickr {
+	color: #0063dc;
+	&:hover, &:focus { color: #0063dc; }
+	&.cbutton--effect::after { .rgbaBackground(#0063dc, .12); }
+}
+/* Foursquare */
+.sb-foursquare {
+	color: #ef4b78;
+	&:hover, &:focus { color: #ef4b78; }
+	&.cbutton--effect::after { .rgbaBackground(#ef4b78, .12); }
+}
+/* GitHub */
+.sb-github {
+	color: #4183c4;
+	&:hover, &:focus { color: #4183c4; }
+	&.cbutton--effect::after { .rgbaBackground(#4183c4, .12); }
+}
+/* Google+ */
+.sb-google-plus {
+	color: #dd4b39;
+	&:hover, &:focus { color: #dd4b39; }
+	&.cbutton--effect::after { .rgbaBackground(#dd4b39, .12); }
+}
+/* Instagram */
+.sb-instagram {
+	color: #3f729b;
+	&:hover, &:focus { color: #3f729b; }
+	&.cbutton--effect::after { .rgbaBackground(#3f729b, .12); }
+}
+/* Jsfiddle */
+.sb-jsfiddle {
+	color: #4679bd;
+	&:hover, &:focus { color: #4679bd; }
+	&.cbutton--effect::after { .rgbaBackground(#4679bd, .12); }
+}
+/* LastFM */
+.sb-lastfm {
+	color: #e31b23;
+	&:hover, &:focus { color: #e31b23; }
+	&.cbutton--effect::after { .rgbaBackground(#e31b23, .12); }
+}
+/* LinkedIn */
+.sb-linkedin {
+	color: #0976b4;
+	&:hover, &:focus { color: #0976b4; }
+	&.cbutton--effect::after { .rgbaBackground(#0976b4, .12); }
+}
+/* PayPal */
+.sb-paypal {
+	color: #253b80;
+	&:hover, &:focus { color: #253b80; }
+	&.cbutton--effect::after { .rgbaBackground(#253b80, .12); }
+}
+/* Pinterest */
+.sb-pinterest {
+	color: #cc2127;
+	&:hover, &:focus { color: #cc2127; }
+	&.cbutton--effect::after { .rgbaBackground(#cc2127, .12); }
+}
+/* Reddit */
+.sb-reddit {
+	color: #ff4500;
+	&:hover, &:focus { color: #ff4500; }
+	&.cbutton--effect::after { .rgbaBackground(#ff4500, .12); }
+}
+/* Skype */
+.sb-skype {
+	color: #00aff0;
+	&:hover, &:focus { color: #00aff0; }
+	&.cbutton--effect::after { .rgbaBackground(#00aff0, .12); }
+}
+/* SoundCloud */
+.sb-soundcloud {
+	color: #f80;
+	&:hover, &:focus { color: #f80; }
+	&.cbutton--effect::after { .rgbaBackground(#f80, .12); }
+}
+/* Stack Overflow */
+.sb-stackoverflow {
+	color: #fe7a15;
+	&:hover, &:focus { color: #fe7a15; }
+	&.cbutton--effect::after { .rgbaBackground(#fe7a15, .12); }
+}
+/* Steam */
+.sb-steam {
+	color: #7da10e;
+	&:hover, &:focus { color: #7da10e; }
+	&.cbutton--effect::after { .rgbaBackground(#7da10e, .12); }
+}
+/* StumbleUpon */
+.sb-stumbleupon {
+	color: #eb4924;
+	&:hover, &:focus { color: #eb4924; }
+	&.cbutton--effect::after { .rgbaBackground(#eb4924, .12); }
+}
+/* Trello */
+.sb-trello {
+	color: #256a92;
+	&:hover, &:focus { color: #256a92; }
+	&.cbutton--effect::after { .rgbaBackground(#256a92, .12); }
+}
+/* Tumblr */
+.sb-tumblr {
+	color: #35465c;
+	&:hover, &:focus { color: #35465c; }
+	&.cbutton--effect::after { .rgbaBackground(#35465c, .12); }
+}
+/* Twitch */
+.sb-twitch {
+	color: #6441a5;
+	&:hover, &:focus { color: #6441a5; }
+	&.cbutton--effect::after { .rgbaBackground(#6441a5, .12); }
+}
+/* Twitter */
+.sb-twitter {
+	color: #5ac8fa;
+	&:hover, &:focus { color: #5ac8fa; }
+	&.cbutton--effect::after { .rgbaBackground(#5ac8fa, .14); }
+}
+/* Vimeo */
+.sb-vimeo {
+	color: #1ab7ea;
+	&:hover, &:focus { color: #1ab7ea; }
+	&.cbutton--effect::after { .rgbaBackground(#1ab7ea, .12); }
+}
+/* Vine */
+.sb-vine {
+	color: #00b488;
+	&:hover, &:focus { color: #00b488; }
+	&.cbutton--effect::after { .rgbaBackground(#00b488, .12); }
+}
+/* VKontakte */
+.sb-vk {
+	color: #45668e;
+	&:hover, &:focus { color: #45668e; }
+	&.cbutton--effect::after { .rgbaBackground(#45668e, .12); }
+}
+/* WeChat */
+.sb-wechat {
+	color: #98d11c;
+	&:hover, &:focus { color: #98d11c; }
+	&.cbutton--effect::after { .rgbaBackground(#98d11c, .12); }
+}
+/* WordPress */
+.sb-wordpress {
+	color: #21759b;
+	&:hover, &:focus { color: #21759b; }
+	&.cbutton--effect::after { .rgbaBackground(#21759b, .12); }
+}
+/* XING */
+.sb-xing {
+	color: #026466;
+	&:hover, &:focus { color: #026466; }
+	&.cbutton--effect::after { .rgbaBackground(#026466, .12); }
+}
+/* Yahoo! */
+.sb-yahoo {
+	color: #400191;
+	&:hover, &:focus { color: #400191; }
+	&.cbutton--effect::after { .rgbaBackground(#400191, .12); }
+}
+/* Yelp */
+.sb-yelp {
+	color: #af0606;
+	&:hover, &:focus { color: #af0606; }
+	&.cbutton--effect::after { .rgbaBackground(#af0606, .12); }
+}
+/* YouTube */
+.sb-youtube {
+	color: #e52d27;
+	&:hover, &:focus { color: #e52d27; }
+	&.cbutton--effect::after { .rgbaBackground(#e52d27, .12); }
+}
+
+
+// Social Links / Buttons Square / Rounded / Circle Versions
+// -----------------------------------------------------------
+.social-buttons-square,
+.social-buttons-rounded,
+.social-buttons-circle {
+	display: inline-block;
+	vertical-align: middle;
+	a {
+		display: inline-block;
+		width: 48px;
+		line-height: 48px;
+		font-size: 20px;
+		color: #fff;
+		text-align: center;
+		text-decoration: none;
+		margin: 0 2px 6px 0;
+		opacity: 1;
+		.backface-visibility(hidden);
+
+		// :hover state
+		&:hover {
+			color: #fff;
+			opacity: .7;
+		}
+		&:focus {
+			color: #fff;
+			outline: none;
+		}
+	}
+
+	/* Behance */
+	.sb-behance { background-color: #1769ff; }
+	/* Bitbucket */
+	.sb-bitbucket { background-color: #205081; }
+	/* CodePen */
+	.sb-codepen { background-color: #76daff; }
+	/* DeviantArt */
+	.sb-deviantart { background-color: #4e6252; }
+	/* Digg */
+	.sb-digg { background-color: #000000; }
+	/* Dribbble */
+	.sb-dribbble { background-color: #ea4c89; }
+	/* Dropbox */
+	.sb-dropbox { background-color: #007ee5; }
+	/* Facebook */
+	.sb-facebook { background-color: #007aff; }
+	/* Flickr */
+	.sb-flickr { background-color: #0063dc; }
+	/* Foursquare */
+	.sb-foursquare { background-color: #ef4b78; }
+	/* GitHub */
+	.sb-github { background-color: #4183c4; }
+	/* Google+ */
+	.sb-google-plus { background-color: #dd4b39; }
+	/* Instagram */
+	.sb-instagram { background-color: #3f729b; }
+	/* Jsfiddle */
+	.sb-jsfiddle { background-color: #4679bd; }
+	/* LastFM */
+	.sb-lastfm { background-color: #e31b23; }
+	/* LinkedIn */
+	.sb-linkedin { background-color: #0976b4; }
+	/* PayPal */
+	.sb-paypal { background-color: #253b80; }
+	/* Pinterest */
+	.sb-pinterest { background-color: #cc2127; }
+	/* Reddit */
+	.sb-reddit { background-color: #ff4500; }
+	/* Skype */
+	.sb-skype { background-color: #00aff0; }
+	/* SoundCloud */
+	.sb-soundcloud { background-color: #f80; }
+	/* Stack Overflow */
+	.sb-stackoverflow { background-color: #fe7a15; }
+	/* Steam */
+	.sb-steam { background-color: #7da10e; }
+	/* StumbleUpon */
+	.sb-stumbleupon { background-color: #eb4924; }
+	/* Trello */
+	.sb-trello { background-color: #256a92; }
+	/* Tumblr */
+	.sb-tumblr { background-color: #35465c; }
+	/* Twitch */
+	.sb-twitch { background-color: #6441a5; }
+	/* Twitter */
+	.sb-twitter { background-color: #5ac8fa; }
+	/* Vimeo */
+	.sb-vimeo { background-color: #1ab7ea; }
+	/* Vine */
+	.sb-vine { background-color: #00b488; }
+	/* VKontakte */
+	.sb-vk { background-color: #45668e; }
+	/* WeChat */
+	.sb-wechat { background-color: #98d11c; }
+	/* WordPress */
+	.sb-wordpress { background-color: #21759b; }
+	/* XING */
+	.sb-xing { background-color: #026466; }
+	/* Yahoo! */
+	.sb-yahoo { background-color: #400191; }
+	/* Yelp */
+	.sb-yelp { background-color: #af0606; }
+	/* YouTube */
+	.sb-youtube { background-color: #e52d27; }
+}
+.social-buttons-rounded a { border-radius: @border-radius-base; }
+.social-buttons-circle a { border-radius: 50%; }
+
+// Light color
+.text-light .icon,
+.text-light .social-buttons a,
+.social-buttons-square a,
+.social-buttons-rounded a,
+.social-buttons-circle a { color: #fff !important; }
+
+// Alignment
+.text-center,
+.text-right {
+	.social-buttons-square,
+	.social-buttons-rounded,
+	.social-buttons-circle,
+	&.social-buttons-square,
+	&.social-buttons-rounded,
+	&.social-buttons-circle { display: block; }
+}

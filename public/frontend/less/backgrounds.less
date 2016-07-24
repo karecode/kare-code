@@ -1,0 +1,147 @@
+//
+// Backgrounds
+// --------------------------------------------------
+
+
+// Solid
+// -------------------------
+.bg-solid-white { background-color: #fff !important; }
+.bg-solid-gray { background-color: #f5f5f5 !important; }
+.bg-solid-default { background-color: @brand-default !important; }
+.bg-solid-primary { background-color: @brand-primary !important; }
+.bg-solid-success { background-color: @brand-success !important; }
+.bg-solid-info { background-color: @brand-info !important; }
+.bg-solid-warning { background-color: @brand-warning !important; }
+.bg-solid-danger { background-color: @brand-danger !important; }
+
+
+// Gradients
+// -------------------------
+.bg-gradient-default {
+  .gradient-vertical(#494949, #313131) !important;
+}
+.bg-gradient-primary {
+  .gradient-vertical(lighten(@brand-primary, 15%), @brand-primary) !important;
+}
+.bg-gradient-success {
+  .gradient-vertical(darken(@brand-success, 14%), @brand-success) !important;
+}
+.bg-gradient-info {
+  .gradient-vertical(lighten(@brand-info, 14%), @brand-info) !important;
+}
+.bg-gradient-warning {
+  .gradient-vertical(lighten(@brand-warning, 14%), @brand-warning) !important;
+}
+.bg-gradient-danger {
+  .gradient-vertical(#ff2676, @brand-danger) !important;
+}
+.bg-gradient-custom1 {
+  .gradient-vertical(#e6b800, #e67f00) !important;
+}
+.bg-gradient-custom2 {
+  .gradient-vertical(#00ff80, #0076ff) !important;
+}
+.bg-gradient-custom3 {
+  .gradient-vertical(#50fbdc, #56c2f4) !important;
+}
+.bg-gradient-custom4 {
+  .gradient-vertical(#92b5f5, #c75ae0) !important;
+}
+.bg-gradient-custom5 {
+  .gradient-vertical(#00ffcc, #f2ff00) !important;
+}
+.bg-gradient-custom6 {
+  .gradient-vertical(#bc23b8, #4d5adb) !important;
+}
+.bg-gradient-custom7 {
+  .gradient-vertical(#391cff, #fc3b33) !important;
+}
+
+// Text Gradients (only Webkit)
+// -------------------------
+.text-gradient-default {
+  color: #494949; // fallback
+  background: -webkit-linear-gradient(#494949, #313131);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-primary {
+  color: @brand-primary; // fallback
+  background: -webkit-linear-gradient(lighten(@brand-primary, 15%), @brand-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-success {
+  color: @brand-success; // fallback
+  background: -webkit-linear-gradient(darken(@brand-success, 14%), @brand-success);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-info {
+  color: @brand-info; // fallback
+  background: -webkit-linear-gradient(lighten(@brand-info, 14%), @brand-info);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-warning {
+  color: @brand-warning; // fallback
+  background: -webkit-linear-gradient(lighten(@brand-warning, 14%), @brand-warning);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-danger {
+  color: @brand-danger; // fallback
+  background: -webkit-linear-gradient(#ff2676, @brand-danger);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-custom1 {
+  color: #e6b800; // fallback
+  background: -webkit-linear-gradient(#e6b800, #e67f00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-custom2 {
+  color: #00ff80; // fallback
+  background: -webkit-linear-gradient(#00ff80, #0076ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-custom3 {
+  color: #50fbdc; // fallback
+  background: -webkit-linear-gradient(#50fbdc, #56c2f4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-custom4 {
+  color: #c75ae0; // fallback
+  background: -webkit-linear-gradient(#92b5f5, #c75ae0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-custom5 {
+  color: #f2ff00; // fallback
+  background: -webkit-linear-gradient(#00ffcc, #f2ff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-custom6 {
+  color: #4d5adb; // fallback
+  background: -webkit-linear-gradient(#bc23b8, #4d5adb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-custom7 {
+  color: #fc3b33; // fallback
+  background: -webkit-linear-gradient(#391cff, #fc3b33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Image Background
+// -------------------------
+.img-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

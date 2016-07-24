@@ -1,0 +1,75 @@
+//
+// Counters
+// --------------------------------------------------
+
+//Base class
+.counter {
+	width: 100%;
+	text-align: center;
+	padding: floor(@line-height-computed * 1.2) 20px floor(@line-height-computed * 1.5) 20px;
+	background-color: @counter-bg;
+	margin-bottom: 30px;
+
+	img {
+		display: inline-block;
+		//margin-bottom: floor(@line-height-computed / 3);
+	}
+
+	// Digits
+	.digits {
+		display: block;
+		font-size: @counter-digits-font-size;
+		font-weight: 300;
+	}
+
+	// Label
+	.counter-label {
+		font-size: @counter-label-font-size;
+		text-transform: uppercase;
+		font-weight: 300;
+		margin-bottom: 0;
+	}
+
+	// Icon
+	.counter-icon {
+		font-size: @counter-icon-size;
+	}
+
+	// Ghost version (without background)
+	&.counter-ghost {
+		//padding: 0;
+		background-color: transparent;
+		margin-bottom: 0;
+	}
+	@media @tablet-port {
+		.digits {
+			font-size: floor(@counter-digits-font-size * 0.9);
+		}
+	}
+}
+
+// Bordered version
+.counter-bordered {
+	background-color: transparent;
+	border: 1px solid @brand-default;
+
+	// Color variations
+	&.counter-primary { border-color: @brand-primary; }
+	&.counter-success { border-color: @brand-success; }
+	&.counter-info { border-color: @brand-info; }
+	&.counter-warning { border-color: @brand-warning; }
+	&.counter-danger { border-color: @brand-danger; }
+}
+
+// When Body Alt
+.body-alt .counter { background-color: @counter-bg-alt; }
+.body-alt .counter-ghost,
+.body-alt .counter-bordered {
+	background-color: transparent;
+}
+
+// Light Skin
+.text-light {
+	.counter-bordered,
+	&.counter-bordered { border-color: #fff; }
+}

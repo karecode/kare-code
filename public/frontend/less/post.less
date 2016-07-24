@@ -1,0 +1,132 @@
+//
+// Post
+// Everything associated with the post
+// Tags, taxonomy, meta info, shop post, portfolio post
+// -----------------------------------------------------
+
+// Post Counters: comments, like, shares, etc.
+// ------------------------------------------------
+.post-counters {
+	display: inline-block;
+	a {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 2px 7px;
+		i {
+			font-size: 175%;
+			margin-right: 5px;
+		}
+	}
+}
+
+
+// Post Meta: author, category, date
+// ------------------------------------------------
+.post-meta {
+	display: inline-block;
+	font-size: @post-meta-font-size;
+	line-height: 2;
+	.taxonomy {
+		display: inline-block;
+		margin-right: 7px;
+	}
+	span {
+		display: inline-block;
+		color: @post-meta-font-color;
+		margin: 0 2px;
+	}
+}
+.single-post-meta {
+	display: table;
+	width: 100%;
+	margin-top: floor(@line-height-computed * 1.8);
+	.column {
+		display: table-cell;
+		vertical-align: middle;
+		width: 50%;
+		&:last-child { text-align: right; }
+	}
+	.post-counters a:first-child { margin-left: 0; }
+	@media screen and (max-width: 580px) {
+		display: block;
+		.column {
+			display: block;
+			width: 100%;
+			&:last-child {
+				text-align: left;
+				margin-top: 15px;
+			}
+		}
+	}
+}
+
+
+// Tags
+// ------------------------------------------------
+.tags { width: 100%; }
+.tag {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: @tag-font-size;
+	color: #fff;
+	background-color: @brand-default;
+	border-radius: @tag-border-radius;
+	line-height: 1;
+	padding: 5px 12px;
+	margin: 0 2px 8px 0;
+	opacity: .5;
+	.backface-visibility(hidden);
+	&:hover, &:focus { color: #fff; }
+	&:hover, &.active {
+		color: #fff;
+		opacity: 1;
+	}
+
+	// Color variants
+	&.tag-default { background-color: @brand-default; }
+	&.tag-primary { background-color: @brand-primary; }
+	&.tag-success { background-color: @brand-success; }
+	&.tag-info { background-color: @brand-info; }
+	&.tag-warning { background-color: @brand-warning; }
+	&.tag-danger { background-color: @brand-danger; }
+}
+
+
+// Shop Post
+// ------------------------------------------------
+// Price
+.shop-price,
+.shop-old-price {
+	display: inline-block;
+	vertical-align: middle;
+	color: @shop-price-color;
+	font-size: floor((@font-size-base * 2.6)); // ~36px
+	font-weight: 300;
+	margin: 0 5px 15px 0;
+}
+.shop-old-price {
+	color: @shop-old-price-color;
+	text-decoration: line-through;
+}
+.text-center {
+	.shop-price { margin: 0 5px 15px 5px; }
+}
+.text-right {
+	.shop-price {
+		margin-right: 0;
+		margin-left: 5px;
+	}
+}
+
+// Wishlist Button
+.wishlist-btn {
+	display: inline-block;
+	vertical-align: middle;
+	color: @shop-wishlist-btn-color;
+	font-size: 16px;
+	line-height: 1;
+	&:hover, &:focus {
+		opacity: 1;
+		color: @shop-wishlist-btn-color;
+	}
+}

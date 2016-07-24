@@ -1,0 +1,135 @@
+//
+// Demo Styles
+// For proper demonstration of some elements
+// (can be removed in production)
+// --------------------------------------------------
+
+// Headers Demo
+.header-demo {
+	position: relative;
+	margin-bottom: 50px;
+	.ghost-header-demo {
+		position: relative;
+		min-height: 400px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+
+// Grid Demo
+.grid-demo figure,
+.grid-demo.masonry-grid-type-1 figure,
+.grid-demo.masonry-grid-type-2 figure {
+	display: block;
+	width: 100%;
+	height: 60px;
+	border: 2px solid #78d5ff;
+	background-color: #b8e9ff;
+	margin-bottom: 30px;
+}
+.grid-demo.masonry-grid-type-1 figure,
+.grid-demo.masonry-grid-type-2 figure {
+	height: auto;
+	margin-bottom: 0;
+}
+.grid-demo.masonry-grid-type-2 figure {
+	position: absolute;
+	min-height: 100%;
+	top: 0;
+	left: 0;
+}
+.grid-demo.grid-no-gap figure {
+	height: 180px;
+	margin-bottom: 0;
+}
+
+// Buttons Demo
+.buttons-demo .btn {
+	margin: 10px 10px 10px 0;
+}
+
+// Badges Demo
+.badges-demo .badge {
+	margin: 0 14px 15px 0;
+}
+.buttons-with-badge-demo .btn {
+	margin: 5px 25px 25px 0;
+}
+
+// Sliders Demo
+.sliders-demo {
+	@media @tablet-port {
+		.slider-ui,
+		.slider-ui-step,
+		.slider.slider-horizontal { width: 550px; }
+	}
+	@media screen and (max-width: 600px) {
+		.slider-ui,
+		.slider-ui-step,
+		.slider.slider-horizontal { width: 400px; }
+	}
+	@media screen and (max-width: 445px) {
+		.slider-ui,
+		.slider-ui-step,
+		.slider.slider-horizontal { width: 260px; }
+	}
+}
+
+// Switches Demo
+.switches-demo .form-group {
+	display: inline-block;
+	width: 100px;
+}
+
+// Tooltips Demo
+.tooltips-demo,
+.popovers-demo {
+	&.static-tooltips,
+	&.static-popovers {
+		//margin-left: -5px;
+		.tooltip,
+		.popover {
+			position: relative;
+			display: inline-block;
+			margin-right: 20px;
+			margin-bottom: 20px;
+			opacity: 1;
+			&:last-child { margin-right: 0; }
+		}
+	}
+	.btn { margin: 10px 10px 10px 0; }
+}
+.popovers-demo.static-popovers {
+	.popover.left { margin-left: 0; }
+	.popover.top { margin-top: 0; }
+}
+
+// Footers Demo
+.demo-footer {
+	margin: @line-height-computed 0 (@line-height-computed * 2) 0;
+}
+
+// Gradients / Colors Demo
+.color-boxes figure {
+	display: block;
+	width: 100%;
+	height: 100px;
+	margin-bottom: @line-height-computed;
+}
+
+// Ratings Demo
+.rating-demo .rating {
+	margin: 0 20px 8px 0;
+}
+
+// Animations Demo
+.animation-demo {
+	padding-top: 72px;
+	@media @tablet-land {
+		padding-top: 24px;
+	}
+	@media @tablet-port {
+		text-align: center;
+	}
+}

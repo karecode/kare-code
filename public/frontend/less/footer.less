@@ -1,0 +1,103 @@
+//
+// Footer
+// --------------------------------------------------
+
+// Footer logo
+.footer-logo {
+	margin-bottom: @line-height-computed;
+  img {
+	  max-width: @footer-logo-img-max-width;
+  }
+}
+
+// Footer Base Classe
+.footer {
+	width: 100%;
+	background-color: @footer-light-bg;
+
+	.container {
+		padding-top: (@line-height-computed * 1.2);
+		padding-bottom: (@line-height-computed * 1.2);
+	}
+
+	.widgets-row { margin-bottom: 0; }
+
+	// Subfooter
+	.subfooter {
+		width: 100%;
+		font-size: @copyright-font-size;
+		background-color: @subfooter-light-bg;
+
+		.container {
+			padding-top: (@line-height-computed / 1.5);
+			padding-bottom: (@line-height-computed / 1.5);
+		}
+	}
+
+	// Copyright
+	.copyright {
+		font-size: @copyright-font-size;
+		margin-bottom: 0;
+	}
+}
+
+// When Alt Body
+.body-alt .footer:not(.footer-dark) { background-color: @footer-light-bg-alt; }
+
+// Mini Footer
+.footer-mini {
+	.container { padding-top: (@line-height-computed * 1.3); }
+	.copyright { margin-top: 10px; }
+}
+
+// Footer Dark Version
+.footer-dark {
+	background-color: @footer-dark-bg;
+	color: @footer-dark-color;
+
+	a { color: @footer-dark-link-color; }
+
+	.footer-logo,
+	.footer-logo:hover,
+	.footer-logo:focus {
+		font-weight: 300;
+		color: @footer-dark-link-color;
+	}
+
+	.widget {
+		.widget-title { color: @footer-dark-color; }
+		&.widget-testimonial .author { color: @footer-dark-color; }
+		&.widget-categories ul li {
+	    &.active a,
+	    &.active a:hover,
+	    &.active a:focus { color: @footer-dark-color; }
+		}
+	  &.widget-comments {
+	    .w-item-thumb i { color: @widget-twitter-feed-icon-color; }
+	    .w-item-content a { color: @footer-dark-color; }
+	  }
+	  &.widget-inline { border-top-color: @footer-dark-color; }
+	}
+
+	.widgets-row .widgets-col:before { background-color: @footer-dark-color; }
+
+	.widget-carousel .owl-carousel .owl-dots .owl-dot {
+		background-color: #fff;
+	}
+
+	.sub-submenu { top: -14px; }
+	.social-buttons a {
+		color: #fff !important;
+		&:hover, &:focus { color: #fff; }
+		&.cbutton--effect::after { .rgbaBackground(#fff, .13); }
+	}
+
+	.tag {
+		opacity: 1;
+		&:hover, &:focus, &.active { opacity: .6; }
+	}
+
+	.subfooter {
+		background-color: @subfooter-dark-bg;
+	}
+}

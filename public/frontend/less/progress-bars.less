@@ -1,0 +1,187 @@
+//
+// Progress bars
+// --------------------------------------------------
+
+.progress {
+	position: relative;
+	width: 100%;
+	background-color: @progress-track-color;
+	margin: @line-height-computed 0;
+
+	.progress-bar {
+		height: @progress-bar-height;
+		background-color: @progress-bar-color-default;
+		white-space: nowrap;
+		.transition(all, .8s);
+
+		// Label
+		.progress-label {
+			display: block;
+			position: absolute;
+			top: -25px;
+			right: 0;
+			font-size: @font-size-small;
+			color: @progress-label-default-color;
+		}
+	}
+
+	// Solid Color Variations
+	&.progress-default {
+		.progress-bar {
+			background-color: @progress-bar-color-default;
+			.progress-label { color: @progress-bar-color-default; }
+		}
+	}
+	&.progress-primary {
+		.progress-bar {
+			background-color: @progress-bar-color-primary;
+			.progress-label { color: @progress-bar-color-primary; }
+		}
+	}
+	&.progress-success {
+		.progress-bar {
+			background-color: @progress-bar-color-success;
+			.progress-label { color: @progress-bar-color-success; }
+		}
+	}
+	&.progress-info {
+		.progress-bar {
+			background-color: @progress-bar-color-info;
+			.progress-label { color: @progress-bar-color-info; }
+		}
+	}
+	&.progress-warning {
+		.progress-bar {
+			background-color: @progress-bar-color-warning;
+			.progress-label { color: @progress-bar-color-warning; }
+		}
+	}
+	&.progress-danger {
+		.progress-bar {
+			background-color: @progress-bar-color-danger;
+			.progress-label { color: @progress-bar-color-danger; }
+		}
+	}
+
+	// Gradient Color Variations
+	&.progress-gradient-1 {
+		.progress-bar {
+			.gradient-horizontal (#00ff80, #0076ff);
+		}
+	}
+	&.progress-gradient-2 {
+		.progress-bar {
+			.gradient-horizontal (#ff8d00, #ffcc00);
+		}
+	}
+	&.progress-gradient-3 {
+		.progress-bar {
+			.gradient-horizontal (#50fbdc, #56c2f4);
+		}
+	}
+	&.progress-gradient-4 {
+		.progress-bar {
+			.gradient-horizontal (#00ffcc, #f2ff00);
+		}
+	}
+	&.progress-gradient-5 {
+		.progress-bar {
+			.gradient-horizontal (#92b5f5, #c75ae0);
+		}
+	}
+	&.progress-gradient-6 {
+		.progress-bar {
+			.gradient-horizontal (#391cff, #fc3b33);
+		}
+	}
+
+	// Thin Version
+	&.progress-thin .progress-bar {
+		height: @progress-thin-bar-height;
+	}
+
+	// Alternative Version
+	&.progress-alt {
+		border-radius: (@progress-alt-bar-height / 2);
+		.progress-bar {
+			font-size: @font-size-small;
+			color: #fff;
+			height: @progress-alt-bar-height;
+			line-height: @progress-alt-bar-height;
+			border-radius: (@progress-alt-bar-height / 2);
+			padding-left: (@progress-alt-bar-height / 2);
+			overflow: hidden;
+		}
+		.progress-label {
+			color: @progress-alt-label-default-color;
+			top: 0;
+			right: (@progress-alt-bar-height / 2);
+		}
+		&.progress-primary, &.progress-success,
+		&.progress-info, &.progress-warning, &.progress-danger,
+		&.progress-gradient-1, &.progress-gradient-2, &.progress-gradient-3,
+		&.progress-gradient-4, &.progress-gradient-5, &.progress-gradient-6 {
+			.progress-label { color: @progress-label-default-color; }
+		} 
+
+		// Solid Color Variations
+		&.progress-primary {
+			.rgbaBackground(@progress-bar-color-primary, 0.1);
+		}
+		&.progress-success {
+			.rgbaBackground(@progress-bar-color-success, 0.12);
+		}
+		&.progress-info {
+			.rgbaBackground(@progress-bar-color-info, 0.12);
+		}
+		&.progress-warning {
+			.rgbaBackground(@progress-bar-color-warning, 0.12);
+		}
+		&.progress-danger {
+			.rgbaBackground(@progress-bar-color-danger, 0.1);
+		}
+
+		// Gradient Color Variations
+		&.progress-gradient-1 {
+			.rgbaGradient(#00ff80, #0076ff, 0.1);
+			.gradient-horizontal (@result1, @result2);
+		}
+		&.progress-gradient-2 {
+			.rgbaGradient(#ff8d00, #ffcc00, 0.12);
+			.gradient-horizontal (@result1, @result2);
+		}
+		&.progress-gradient-3 {
+			.rgbaGradient(#50fbdc, #56c2f4, 0.12);
+			.gradient-horizontal (@result1, @result2);
+		}
+		&.progress-gradient-4 {
+			.rgbaGradient(#00ffcc, #f2ff00, 0.15);
+			.gradient-horizontal (@result1, @result2);
+		}
+		&.progress-gradient-5 {
+			.rgbaGradient(#92b5f5, #c75ae0, 0.1);
+			.gradient-horizontal (@result1, @result2);
+		}
+		&.progress-gradient-6 {
+			.rgbaGradient(#391cff, #fc3b33, 0.1);
+			.gradient-horizontal (@result1, @result2);
+		}
+
+		// Stacked Version
+		&.progress-stacked { margin: 0; }
+	}
+
+	// Animated versio
+	&.progress-animated {
+		.progress-bar { padding-left: 0; }
+	}
+}
+
+// On dark background (light text)
+.text-light .progress,
+.text-light.progress {
+	.progress-label { color: #fff !important; }
+}
+
+// When Alt Body
+.body-alt .progress { background-color: @progress-track-color-alt; }

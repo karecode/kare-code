@@ -1,0 +1,126 @@
+//
+// Modals
+// dependency: bootstrap/modals.less
+// --------------------------------------------------
+
+.modal {
+	z-index: @modal-zindex;
+	background-color: @modal-background-color;
+	.backface-visibility(hidden);
+}
+.modal-dialog {
+	width: 100%;
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.modal-content {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border: none;
+}
+.modal-dialog .container {
+	padding: 90px 15px 50px 15px;
+}
+.modal.fade {
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0;
+	.transition(all, .4s);
+	&.in {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+	}
+	.modal-dialog {
+		-webkit-transition: none;
+		-moz-transition: none;
+		-ms-transition: none;
+		-o-transition: none;
+		transition: none;
+	}
+}
+.modal-backdrop {
+	display: none;
+}
+.modal-title {
+	font-size: @font-size-h3;
+	font-weight: 300;
+	color: @modal-title-color;
+}
+.modal-form {
+	width: 100%;
+	max-width: @modal-form-max-width;
+	margin: auto;
+}
+.fake-scrollbar {
+	display: none;
+	position: fixed;
+	z-index: (@modal-zindex - 5);
+	top: 0;
+	right: 0;
+	width: 17px;
+	min-height: 100%;
+	background-color: #f1f1f1;
+}
+@scrollbar-w: 17px;
+.modal-open {
+	.top-bar-ghost-light,
+	.top-bar-ghost-dark,
+	.navbar-ghost,
+	.navbar.stuck {
+		padding-right: 17px;
+	}
+  .scroll-to-top-btn {
+  	right: 37px;
+  }
+	.fake-scrollbar {
+		display: block;
+		padding-right: 17px;
+	}
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.modal-open,
+	.top-bar-ghost-light,
+	.top-bar-ghost-dark,
+	.navbar-ghost,
+	.modal-open .navbar.stuck {
+		padding-right: 0 !important;
+	}
+  .scroll-to-top-btn {
+  	right: 20px !important;
+  }
+	.modal-open .fake-scrollbar {
+		display: none;
+		padding-right: 0;
+	}
+}
+.mac .modal-open,
+.touch .modal-open,
+.mac .top-bar-ghost-light,
+.mac .top-bar-ghost-dark,
+.mac .navbar-ghost,
+.touch .top-bar-ghost-light,
+.touch .top-bar-ghost-dark,
+.touch .navbar-ghost,
+.mac .modal-open .navbar.stuck,
+.touch .modal-open .navbar.stuck {
+	padding-right: 0 !important;
+}
+.mac .modal-open .scroll-to-top-btn,
+.touch .modal-open .scroll-to-top-btn {
+	right: 0 !important;
+}
+.mac .modal-open .fake-scrollbar,
+.touch .modal-open .fake-scrollbar {
+	display: none;
+	padding-right: 0;
+}
