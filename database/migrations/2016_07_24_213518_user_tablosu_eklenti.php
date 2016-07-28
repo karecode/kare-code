@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UsersResimColumnEki extends Migration
+class UserTablosuEklenti extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,9 @@ class UsersResimColumnEki extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('kucuk_resim');
+            $table->string('orta_resim');
+            $table->string('buyuk_resim');
+            $table->boolean('user_type');
         });
     }
 
@@ -24,8 +26,10 @@ class UsersResimColumnEki extends Migration
      */
     public function down()
     {
-        Schema::table('users', function ( $table) {
-            $table->dropColumn('kucuk_resim');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('orta_resim');
+            $table->dropColumn('buyuk_resim');
+            $table->dropColumn('user_type');
         });
     }
 }

@@ -13,4 +13,9 @@ class AdminController extends AdminBaseController
     {
         return view('backend.pages.dashboard');
     }
+
+    public function getLogin()
+    {
+        return view('backend.pages.login');
+    }
 }

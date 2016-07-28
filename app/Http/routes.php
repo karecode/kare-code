@@ -18,10 +18,16 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/blog', 'BlogController@get_blog');
+/*Route::get('/admin', function () {
+    return redirect()->route('admin.dashboard');
+});*/
 
-Route::group(['prefix' => 'admin','middleware'=>['web','auth']], function () {
-    Route::get('dashboard', 'Backend\AdminController@index');
-    Route::get('blog-ekle', 'Backend\BlogController@get_blogEkle');
+Route::group(['prefix' => 'admin','middleware'=>['auth','admin']], function () {
+    Route::get('dashboard', ['as'=>'admin.dashboard','uses'=>'Backend\AdminController@index']);
+    Route::get('login', ['as'=>'admin.getLogin','uses'=>'Backend\AdminController@getLogin']);
+    Route::get('blog/blog-ekle',['as'=>'admin.blogEkle','uses'=>'Backend\BlogController@get_blogEkle'] );
+    Route::post('blog/blog-ekle',['as'=>'admin.blogEkle','uses'=>'Backend\BlogController@post_blogEkle'] );
     Route::post('blog/resim-upload','Backend\BlogController@resimYukle');
     Route::post('/upload_image',['as'=>'ckeditor.upload','uses'=>'Backend\BlogController@ckeupload']);
 });

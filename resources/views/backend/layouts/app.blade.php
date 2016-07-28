@@ -38,18 +38,18 @@
                             <li><a href="contacts.html">Contacts</a></li>
                             <li><a href="mailbox.html">Mailbox</a></li>
                             <li class="divider"></li>
-                            <li><a href="login.html">Logout</a></li>
+                            <li><a href="/logout">Çıkış Yap</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
                         IN+
                     </div>
                 </li>
-                <li class="active">
-                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span
+                <li class="">
+                    <a href="dashboard"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span
                                 class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li class="active"><a href="index.html">Dashboard v.1</a></li>
+                        <li class=""><a href="index.html">Dashboard v.1</a></li>
                         <li><a href="dashboard_2.html">Dashboard v.2</a></li>
                         <li><a href="dashboard_3.html">Dashboard v.3</a></li>
                         <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
@@ -61,11 +61,11 @@
                     <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Blog</span> <span
+                    <a href="blog"><i class="fa fa-th-large"></i> <span class="nav-label">Blog</span> <span
                                 class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a href="bloglar">Bloglar</a></li>
-                        <li><a href="blog-ekle">Blog Ekle</a></li>
+                        {{--<li><a href="{{route('admin.bloglar')}}">Bloglar</a></li>--}}
+                        <li><a href="{{route('admin.blogEkle')}}">Blog Ekle</a></li>
                     </ul>
                 </li>
             </ul>
@@ -98,7 +98,7 @@
                             <li>
                                 <div class="dropdown-messages-box">
                                     <a href="profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="/frontend/img/a7.jpg">
+                                        <img alt="image" class="img-circle" src="/backend/img/a7.jpg">
                                     </a>
                                     <div class="media-body">
                                         <small class="pull-right">46h ago</small>
@@ -112,7 +112,7 @@
                             <li>
                                 <div class="dropdown-messages-box">
                                     <a href="profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="/frontend/img/a4.jpg">
+                                        <img alt="image" class="img-circle" src="/backend/img/a4.jpg">
                                     </a>
                                     <div class="media-body ">
                                         <small class="pull-right text-navy">5h ago</small>
@@ -126,7 +126,7 @@
                             <li>
                                 <div class="dropdown-messages-box">
                                     <a href="profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="/frontend/img/profile.jpg">
+                                        <img alt="image" class="img-circle" src="/backend/img/profile.jpg">
                                     </a>
                                     <div class="media-body ">
                                         <small class="pull-right">23h ago</small>
@@ -190,8 +190,8 @@
 
 
                     <li>
-                        <a href="login.html">
-                            <i class="fa fa-sign-out"></i> Log out
+                        <a href="/logout">
+                            <i class="fa fa-sign-out"></i> Çıkış Yap
                         </a>
                     </li>
                     <li>
@@ -330,7 +330,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/frontend/img/a1.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/backend/img/a1.jpg">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
@@ -348,7 +348,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/frontend/img/a2.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/backend/img/a2.jpg">
                                     </div>
                                     <div class="media-body">
                                         The point of using Lorem Ipsum is that it has a more-or-less normal.
@@ -360,7 +360,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/frontend/img/a3.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/backend/img/a3.jpg">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
@@ -379,7 +379,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/frontend/img/a4.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/backend/img/a4.jpg">
                                     </div>
 
                                     <div class="media-body">
@@ -392,7 +392,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/frontend/img/a8.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/backend/img/a8.jpg">
                                     </div>
                                     <div class="media-body">
 
@@ -405,7 +405,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/frontend/img/a7.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/backend/img/a7.jpg">
                                     </div>
                                     <div class="media-body">
                                         Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..",
@@ -418,7 +418,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/frontend/img/a3.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/backend/img/a3.jpg">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
@@ -436,7 +436,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/frontend/img/a4.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/backend/img/a4.jpg">
                                     </div>
                                     <div class="media-body">
                                         Uncover many web sites still in their infancy. Various versions have.
@@ -705,6 +705,18 @@
             }
         });
     });
+    $( ".metismenu li" ).each(function() {
+        if($(this).find('a').attr('href')=="{{Request::segment(2)}}")
+        {
+            $( this ).addClass( "active" );
+        }
+        if($(this).find('ul li a').attr('href')==window.location.href)
+        {
+            $( this ).find('ul li').addClass( "active" );
+        }
+    });
+
+
 </script>
 
 @yield('js')
