@@ -695,8 +695,8 @@
 <script src="{{asset('backend/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('backend/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
 <script src="{{asset('backend/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
-<script src="{{asset('')}}/js/sweetalert2.min.js"></script>
-<script src="{{asset('')}}/js/ajax_settings.js"></script>
+<script src="{{asset('')}}js/sweetalert2.min.js"></script>
+<script src="{{asset('')}}js/ajax_settings.js"></script>
 <script>
     $(function() {
         $.ajaxSetup({

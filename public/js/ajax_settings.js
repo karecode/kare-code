@@ -6,7 +6,7 @@ function returnError(msg) {
         msg.baslik,
         msg.msg,
         'error'
-    )
+    );
 }
 
 function returnSuccess(msg) {
@@ -14,5 +14,5 @@ function returnSuccess(msg) {
         msg.baslik,
         msg.msg,
         'success'
-    )
+    );
 }
