@@ -19,9 +19,9 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/blog', 'BlogController@get_blog');
-/*Route::get('/admin', function () {
+Route::get('/admin', function () {
     return redirect()->route('admin.dashboard');
-});*/
+});
 
 Route::group(['prefix' => 'admin','middleware'=>['auth','admin']], function () {
     Route::get('dashboard', ['as'=>'admin.dashboard','uses'=>'Backend\AdminController@index']);

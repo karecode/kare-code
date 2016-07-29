@@ -11,7 +11,7 @@ class BlogController extends Controller
 {
     public function get_blog()
     {
-        $blog=Blog::paginate(1);
+        $blog=Blog::paginate(10);
         return view('frontend.pages.blog')->with('bloglar',$blog);
     }
 }

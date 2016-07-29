@@ -128,12 +128,17 @@
                     $("#bar").width('100%');
                     $("#yuzde").html('100%');
                 },
-                complete: function (response) {
-                    alert(response.responseText); /*sunucudan gelen cevap iceriği*/
-                    $("#mesaj").html("<font color='green'>Dosya başarılı bir şekilde yüklendi</font>");
+                complete: function (cevap) {
+                    returnSuccess(cevap.responseText);
+                    swal(
+                            cevap.responseText.baslik,
+                            cevap.responseText.msg,
+                            'success'
+                    );
+                    alert(cevap.responseText);
                 },
-                error: function () {
-                    $("#mesaj").html("<font color='red'> Bir hata oluştu</font>");
+                error: function (response) {
+                    /*returnError(response);*/
                 }
             });
             CKEDITOR.replace('icerik', {
