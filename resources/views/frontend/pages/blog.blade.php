@@ -7,13 +7,13 @@
         <div class="page-title space-top">
             <div class="ph-table">
                 <div class="ph-td">
-                    <h1>Blog Grid 2 Cols</h1>
+                    <h1>Bloglar</h1>
                 </div>
                 <div class="ph-td text-right">
                     <ol class="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li>Blog Grid 2 Cols</li>
+                        <li><a href="/">Anasayfa</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li>Bloglar</li>
                     </ol>
                 </div>
             </div>
